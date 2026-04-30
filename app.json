@@ -1,0 +1,15 @@
+{
+  "name": "sosyalhakrehberi-web",
+  "description": "Next.js frontend and admin surface for Sosyal Hak Rehberi.",
+  "stack": "heroku-24",
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": {
+      "description": "Canonical site URL for this deployment.",
+      "required": true
+    },
+    "NEXT_PUBLIC_API_BASE_URL": {
+      "description": "Canonical backend base URL.",
+      "required": true
+    }
+  }
+}
