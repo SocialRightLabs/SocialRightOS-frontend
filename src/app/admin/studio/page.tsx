@@ -11,12 +11,12 @@ const initialDraft: ContentDraft = {
   section: "guide",
   canonical_path: "/",
   seo_title: "Yeni içerik başlığı | Sosyal Hak Rehberi",
-  seo_description: "Sosyal hak rehberi için kısa, açıklayıcı ve SEO odaklı giriş metni.",
+  seo_description: "Sosyal hak rehberi için kısa ve açıklayıcı giriş metni.",
   body: "İlk paragrafta doğrudan cevap, ikinci bölümde açıklama, son bölümde aksiyon.",
   layout_focus: "Hero + kısa cevap + rehber kutusu + sonraki adım",
   primary_cta: "Rehberi aç",
   secondary_cta: "İlgili içeriği gör",
-  trust_note: "Bu içerik öndegerlendirme ve rehberlik amaìı.",
+  trust_note: "Bu içerik ön değerlendirme ve rehberlik amaçlıdır.",
   status: "draft",
 };
 
@@ -82,13 +82,13 @@ export default function AdminStudioPage() {
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_380px]">
       <section className="card-panel">
-        <p className="eyebrow">Studio</p>
+        <p className="eyebrow">Yayın Stüdyosu</p>
         <h2 className="mt-4 text-2xl font-semibold text-slate-950">
-          Sayfa düzeni ve hiçerik taslagı oluştur
+          Sayfa düzeni ve içerik taslağı oluştur
         </h2>
         <p className="mt-3 text-sm leading-7 text-slate-700">
-          Bu alan, yeni içerik ve sayfa iskeletini hñzlıca hazırlamak çin kullanılır. Taslak
-          saklanir, JSON olarak düşa aktapılır ve gerektiğinde repoya taşınabilir.
+          Bu alan, yeni içerik ve sayfa iskeletini hızlıca hazırlamak için kullanılır. Taslak
+          saklanır, JSON olarak dışa aktarılır ve gerektiğinde repoya taşınabilir.
         </p>
 
         <div className="mt-6 grid gap-4 md:grid-cols-2">

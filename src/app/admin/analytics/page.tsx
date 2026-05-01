@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { analyticsProviderRegistry, analyticsRegistry } from "@/lib/analytics-registry";
 
 export const metadata: Metadata = {
-  title: "Analytics Registry",
+  title: "Analitik Kaydı",
   description: "Ölçümleme olayları ve ücretsiz araç entegrasyon planı.",
   robots: {
     index: false,

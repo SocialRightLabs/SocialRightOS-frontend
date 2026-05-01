@@ -24,15 +24,15 @@ export const homeCareMethodologyContent: MethodologyContent = {
     "Bu sayfa aracın ne yaptığını, neyi yapmadığını ve sonucun neden ön değerlendirme niteliğinde olduğunu açıklar.",
   sections: [
     {
-      title: "Bu araç ne yapar?",
+      title: "Bu sayfa ne yapar?",
       body: [
         "Hesaplama akışında girdiğiniz temel gelir, hane ve bakım ihtiyacı bilgilerini toplar.",
-        "Sonucu ve açıklama alanlarını socialrightlabs değerlendirme motorundan alır.",
-        "Durum, gerekçeler, eksik bilgiler ve varsa kural ayrıntılarını ekranda anlaşılır biçimde sunar.",
+        "Sonucu ve açıklama alanlarını arka plandaki kontrol akışından alır.",
+        "Durum, gerekçeler ve eksik bilgileri ekranda anlaşılır biçimde sunar.",
       ],
     },
     {
-      title: "Bu araç neyi bilemez?",
+      title: "Bu sayfa neyi yapmaz?",
       body: [
         "Resmî kayıtları doğrudan göremez.",
         "Belge doğrulaması yapmaz.",
@@ -40,17 +40,17 @@ export const homeCareMethodologyContent: MethodologyContent = {
       ],
     },
     {
-      title: "Sonuç neden ön değerlendirmedir?",
+      title: "Neden ön değerlendirme?",
       body: [
         "Nihai uygunluk kararı ilgili kurumun belge incelemesi ve güncel uygulamasıyla verilir.",
         "Gelir, hane yapısı veya bakım ihtiyacı değişirse sonuç da değişebilir.",
       ],
     },
     {
-      title: "Kaynağın sahibi kim?",
+      title: "Sonuçlar nereden gelir?",
       body: [
-        "Kurallar ve açıklamalar backend tarafında üretilir.",
-        "Frontend yalnızca backend çıktısını gösterir; uygunluk hesabını kendi başına yapmaz.",
+        "Kurallar ve açıklamalar arka planda oluşturulur.",
+        "Ekran, bu çıktıyı kullanıcı dostu bir biçimde gösterir; hesabı kendi başına yapmaz.",
       ],
     },
   ],
@@ -67,4 +67,3 @@ export const homeCareMethodologyContent: MethodologyContent = {
   disclaimer:
     "Bu araç resmî karar vermez. Sonuçlar ön değerlendirme niteliğindedir ve mutlaka resmî kanallardan doğrulanmalıdır.",
 };
-

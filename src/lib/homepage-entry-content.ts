@@ -1,8 +1,8 @@
 export const homepageHero = {
   eyebrow: "Uygunluk Testleri",
-  title: "Doğru uygunluk testine hızla ulaşın ve ilk adımı gecikmeden atın",
+  title: "Size uygun testi hızla bulun ve ilk adımı rahatça atın",
   body:
-    "Sosyal Hak Rehberi, sizi en ilgili ön değerlendirme akışına yönlendirir. Kısa form, açıklayıcı sonuç ve sonraki adım rehberliği aynı yolculuk içinde sunulur.",
+    "Sosyal Hak Rehberi, sizi en ilgili teste ve en doğru rehbere yönlendirir. Kısa soru akışı, sade sonuç ve sonraki adım önerisi tek bir yerde sunulur.",
   primaryCtaLabel: "Uygunluk testine başla",
   primaryCtaHref: "#durumunu-sec",
 };
@@ -11,14 +11,14 @@ export const homepageChooseItems = [
   {
     title: "Sağlık primi veya gelir testiyle ilgili sorunuz varsa",
     body:
-      "GSS Gelir Testi ile sosyal güvence ve gelir testi durumunuza hızlı bir başlangıç yapabilirsiniz.",
+      "GSS Gelir Testi ile sosyal güvence ve gelir durumunuza hızlı bir başlangıç yapabilirsiniz.",
     href: "/gss-gelir-testi",
     cta: "GSS testini aç",
   },
   {
     title: "Evde bakım maaşı yönünü anlamak istiyorsanız",
     body:
-      "Evde Bakım Maaşı akışı, bakım ihtiyacı, gelir ve hane bilgisi üzerinden açıklayıcı bir ön değerlendirme sunar.",
+      "Evde Bakım Maaşı akışı, bakım ihtiyacı, gelir ve hane bilgisi üzerinden sade bir ön bakış sunar.",
     href: "/start",
     cta: "Evde bakım testini aç",
   },
@@ -32,7 +32,7 @@ export const homepageChooseItems = [
   {
     title: "Doğum yardımı hakkında bilgi arıyorsanız",
     body:
-      "Doğum Yardımı testi canlıdır. Kısa sorularla ön değerlendirme alabilir ve sonraki adım rehberini görebilirsiniz.",
+      "Doğum Yardımı testi kısa sorularla ilerler ve sonraki adım rehberini gösterir.",
     href: "/dogum-yardimi-uygunluk-testi",
     cta: "Doğum yardımı testini aç",
   },
@@ -40,7 +40,7 @@ export const homepageChooseItems = [
 
 export const homepageTrustNotes = [
   "Bu sitedeki sonuçlar ön değerlendirme niteliğindedir; resmî karar yerine geçmez.",
-  "Kararı değerlendirme sistemi verir; ekranda yalnızca anlaşılır bir açıklama gösterilir.",
+  "Ekranda yalnızca anlaşılır bir açıklama gösterilir; kullanıcı teknik ayrıntıyla yorulmaz.",
   "Gereksiz kişisel veri istemiyoruz. Kimlik numarası, açık adres ve belge yükleme bu aşamada yok.",
 ];
 
@@ -49,7 +49,7 @@ export const homepageGuideLinks = [
     href: "/evde-bakim-maasi",
     title: "Evde Bakım Maaşı ana rehberi",
     body:
-      "Hesaplamaya geçmeden önce hangi bilgilerin gerekli olduğunu ve sonuç ekranının ne anlattığını özetler.",
+      "Başvuruya geçmeden önce hangi bilgilerin önemli olduğunu ve sonuç ekranının ne anlattığını özetler.",
   },
   {
     href: "/evde-bakim-maasi/sartlar",
@@ -61,7 +61,7 @@ export const homepageGuideLinks = [
     href: "/evde-bakim-maasi/gelir-ve-hane-bilgisi",
     title: "Gelir ve hane bilgisi rehberi",
     body:
-      "Gelir sorularının neden istendiğini ve gelir kontrolünün neden yalnızca yol gösterici kullanıldığını anlatır.",
+      "Gelir sorularının neden sorulduğunu ve bu kontrolün neden yalnızca yol gösterici olduğunu anlatır.",
   },
   {
     href: "/blog",
@@ -70,4 +70,3 @@ export const homepageGuideLinks = [
       "Testlerden önce ve sonra okunabilecek açıklamaları ve rehber içeriklerini tek yerde toplar.",
   },
 ];
-

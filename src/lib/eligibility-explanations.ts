@@ -109,11 +109,11 @@ const fallbackReasonByStatus: Record<
 > = {
   ELIGIBLE: {
     title: "Mevcut bilgiler olumlu görünüyor",
-    body: "Paylaştığınız bilgilerle değerlendirme sistemi uygunluk yönünde bir ön değerlendirme üretti.",
+    body: "Paylaştığınız bilgilerle ön değerlendirme aracı uygunluk yönünde bir sonuç üretti.",
   },
   NOT_ELIGIBLE: {
     title: "Mevcut bilgilerle uygun görünmüyor",
-    body: "Paylaştığınız bilgilerle değerlendirme sistemi şu aşamada uygunluk yönünde bir sonuç üretmedi.",
+    body: "Paylaştığınız bilgilerle ön değerlendirme aracı şu aşamada uygunluk yönünde bir sonuç üretmedi.",
   },
   NEEDS_INFO: {
     title: "Karar için daha fazla bilgi gerekiyor",
@@ -281,4 +281,3 @@ export function buildDecisionViewModel(input: {
     helperLinks: checklist.links,
   };
 }
-

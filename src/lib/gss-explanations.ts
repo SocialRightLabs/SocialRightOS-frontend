@@ -88,11 +88,11 @@ const missingFactMap: Record<string, GssExplanationItem> = {
 const fallbackByStatus: Record<EligibilityStatus, GssExplanationItem> = {
   ELIGIBLE: {
     title: "GSS gelir testi açısından olumlu görünüyor",
-    body: "Mevcut bilgilerle değerlendirme sistemi GSS gelir testi için olumlu bir ön değerlendirme döndürdü.",
+      body: "Mevcut bilgilerle ön değerlendirme aracı GSS gelir testi için olumlu bir sonuç döndürdü.",
   },
   NOT_ELIGIBLE: {
     title: "GSS gelir testi açısından farklı bir durum görünüyor",
-    body: "Mevcut bilgilerle değerlendirme sistemi GSS gelir testi için olumsuz bir ön değerlendirme döndürdü.",
+      body: "Mevcut bilgilerle ön değerlendirme aracı GSS gelir testi için olumsuz bir sonuç döndürdü.",
   },
   NEEDS_INFO: {
     title: "Daha fazla bilgi gerekli",
@@ -134,7 +134,7 @@ export function buildGssDecisionViewModel(input: {
     return {
       title: "GSS gelir testi için uygun görünüyorsunuz",
       summary:
-        "Değerlendirme sistemi mevcut bilgilerle olumlu bir ön değerlendirme üretti. Bu sonuç resmî karar yerine geçmez.",
+        "Ön değerlendirme aracı mevcut bilgilerle olumlu bir sonuç üretti. Bu sonuç resmî karar yerine geçmez.",
       primaryReason: primaryReason ?? fallbackByStatus[status],
       secondaryReasons,
       missingInformation,
@@ -169,7 +169,7 @@ export function buildGssDecisionViewModel(input: {
   return {
     title: "GSS gelir testi için uygun görünmüyorsunuz",
     summary:
-      "Değerlendirme sistemi girilen bilgilerle olumsuz bir ön değerlendirme döndürdü. Bu sonuç resmî kurum kararı yerine geçmez.",
+      "Ön değerlendirme aracı girilen bilgilerle olumsuz bir sonuç döndürdü. Bu sonuç resmî kurum kararı yerine geçmez.",
     primaryReason: primaryReason ?? fallbackByStatus[status],
     secondaryReasons,
     missingInformation,
@@ -182,4 +182,3 @@ export function buildGssDecisionViewModel(input: {
     ],
   };
 }
-

@@ -21,10 +21,10 @@ export type StartContent = {
 
 export const homeCareStartContent: StartContent = {
   eyebrow: "Başlangıç",
-  title: "Evde bakım maaşı uygunluk kontrolüne başlamadan önce",
+  title: "Evde bakım maaşı başvuru öncesi kısa kontrol",
   subtitle:
-    "Birkaç temel bilgiyle ön değerlendirme sonucu, açıklayıcı gerekçeler ve sonraki adımları görebilirsiniz.",
-  checklistHeading: "Hazır bulundurmanız iyi olur",
+    "Birkaç temel bilgiyle sonucu, kısa gerekçeleri ve sonraki adımı görebilirsiniz.",
+  checklistHeading: "Hazır tutmanız iyi olur",
   checklist: [
     {
       title: "Hane bilgisi",
@@ -47,11 +47,10 @@ export const homeCareStartContent: StartContent = {
   disclaimerHeading: "Önemli not",
   disclaimerBody: [
     "Bu araç resmî karar vermez.",
-    "Girdiğiniz bilgilere dayalı ön değerlendirme ve yönlendirme sunar.",
+    "Girdiğiniz bilgilere dayalı ön bakış ve yönlendirme sunar.",
   ],
   primaryHref: "/evde-bakim-maasi/hesaplama",
   primaryLabel: "Kontrole başla",
   secondaryHref: "/methodology",
   secondaryLabel: "Nasıl çalıştığını gör",
 };
-

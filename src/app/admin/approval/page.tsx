@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { approvalRegistry } from "@/lib/content-registry";
 
 export const metadata: Metadata = {
-  title: "Approval Queue",
+  title: "Onay Sırası",
   description: "Yayın öncesi onay ve kontrol kaydı.",
   robots: {
     index: false,

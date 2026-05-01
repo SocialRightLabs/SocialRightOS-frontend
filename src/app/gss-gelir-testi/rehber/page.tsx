@@ -21,7 +21,7 @@ export default function GssGuidePage() {
           </h1>
           <p className="mt-5 text-base leading-8 text-slate-700">
             GSS gelir testi aracı resmî karar vermez. Sosyal güvence, aktif sigorta ve gelir
-            bilginizi değerlendirme sistemine iletir; size ön değerlendirme ve bir sonraki adım için
+            bilginizi arka plandaki kontrol akışına iletir; size ön bakış ve bir sonraki adım için
             kısa yönlendirme sunar.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -56,4 +56,3 @@ export default function GssGuidePage() {
     </main>
   );
 }
-

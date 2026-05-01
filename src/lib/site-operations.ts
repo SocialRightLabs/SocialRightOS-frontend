@@ -16,53 +16,53 @@ export const siteOperations: {
   workStreams: WorkStream[];
 } = {
   mission:
-    "Önce trafik, sonra veri, sonra satış modelini koruyarak sosyal hak bilgisini anlaşılır ve güven veren bir ürüne dönüştürmek.",
+    "Sosyal hak bilgisini sade, güven veren ve kolay anlaşılır bir rehber deneyimine dönüştürmek.",
   vision:
-    "Sosyal hak rehberini tekil içerik değil, ölçülebilir bir bilgi ve yönlendirme sistemi haline getirmek.",
+    "Sosyal hak rehberini tekil içerik değil, kullanıcıyı doğru adıma taşıyan güvenilir bir yol gösterici haline getirmek.",
   trafficModel: [
-    "Google'da aranan konuları net, kısa ve yanıt veren sayfalara dönüştürürüz.",
+    "Aranan konuları net, kısa ve doğrudan sayfalara dönüştürürüz.",
     "Kullanıcıya ilk ekranda açıklık, güven ve sonraki adım veririz.",
-    "Öğrenilen davranışı veri olarak tutar, tekrar gelen kullanıcı için akışı sadeleştiririz.",
+    "Tekrarlanan soruları azaltarak akışı sadeleştiririz.",
   ],
   publishingRules: [
-    "Her sayfa net bir arama niyetine cevap vermeli.",
-    "İlk paragraf kısa cevap, ikinci bölüm açıklama, son bölüm aksiyon olmalı.",
+    "Her sayfa tek bir soruya net cevap vermeli.",
+    "İlk bölüm kısa cevap, ikinci bölüm açıklama, son bölüm yönlendirme olmalı.",
     "Aşırı iddia yok; kaynak, gerekçe ve sınır açık olmalı.",
-    "Yeni konu yeni proje değil, kontrollü ve ölçeklenebilir içerik bileşeni olmalı.",
+    "Yeni konu, kontrollü ve tekrar kullanılabilir bir içerik bileşeni olmalı.",
   ],
   workStreams: [
     {
       key: "frontend",
-      title: "Frontend",
-      summary: "Ziyaretçinin ilk gördüğü deneyim, SEO görünürlüğü ve rehber akışı.",
+      title: "Görünür yüz",
+      summary: "Ziyaretçinin ilk gördüğü deneyim, okunabilirlik ve rehber akışı.",
       responsibilities: [
         "Ana sayfa, rehber sayfaları ve sonuç ekranlarının sade tasarımı",
-        "SEO başlıkları, metadata ve okunabilirlik standardı",
+        "Okunabilirlik, erişilebilirlik ve net başlık standardı",
         "Hızlı yönlendirme, güven notu ve aksiyon butonları",
       ],
-      output: "Dönüşüm odaklı, okunaklı ve güven veren kullanıcı yüzeyi",
+      output: "Okunaklı, net ve güven veren kullanıcı yüzeyi",
     },
     {
       key: "backend",
-      title: "Backend",
-      summary: "Karar mantığı, veri modeli, doğrulama ve yayın güveni.",
+      title: "Sonuç akışı",
+      summary: "Karar mantığı, veri doğrulama ve sonuç güveni.",
       responsibilities: [
         "Hak kuralları, veri şemaları ve karar açıklaması",
-        "Kaynak, onay ve analytics kayıtlarının yapısal tutulması",
+        "Yapısal veri saklama ve doğrulama kayıtları",
         "Tekrarlanabilir ve test edilebilir üretim akışı",
       ],
-      output: "Deterministik, denetlenebilir ve yeniden kullanılabilir veri çekirdeği",
+      output: "Tutarlı ve denetlenebilir sonuç altyapısı",
     },
     {
       key: "admin",
-      title: "Admin",
-      summary: "İçerik paylaşımı, sayfa düzeni, onay ve yayın kontrolü.",
+      title: "Yayın paneli",
+      summary: "İçerik paylaşımı, sayfa düzeni ve onay kontrolü.",
       responsibilities: [
         "İçerik taslağı oluşturma ve düzenleme",
         "Sayfa düzeni, CTA ve trust notu güncelleme",
         "Yayın öncesi onay ve içerik kuyruğu yönetimi",
       ],
-      output: "Düşük maliyetli ama kontrollü bir içerik yönetim yüzeyi",
+      output: "Kontrollü ve sürdürülebilir içerik yönetimi",
     },
   ],
 };

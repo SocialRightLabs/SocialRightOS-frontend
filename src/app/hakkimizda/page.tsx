@@ -6,7 +6,7 @@ import { siteProfile } from "@/lib/site-profile";
 export const metadata: Metadata = {
   title: "Hakkımızda | Misyon, Vizyon ve Çalışma Modeli",
   description:
-    "Sosyal Hak Rehberi'nin misyonu, vizyonu, uzmanlık zemini, iş dağılımı ve doğrudan iletişim kanalları.",
+    "Sosyal Hak Rehberi'nin misyonu, vizyonu, uzmanlık zemini ve doğrudan iletişim kanalları.",
   alternates: {
     canonical: "/hakkimizda",
   },
@@ -24,7 +24,7 @@ export default function AboutPage() {
               rehberlik sistemine dönüştürür
             </h1>
             <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
-              {siteProfile.mission} Buradaki amaç, ziyaretçiyi ilk anda do,gru teste, doğru rehbere
+              {siteProfile.mission} Buradaki amaç, ziyaretçiyi ilk anda doğru teste, doğru rehbere
               ve doğru sonraki adıma yönlendirmektir.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
@@ -68,8 +68,7 @@ export default function AboutPage() {
             <div className="mt-5 rounded-2xl bg-slate-50 p-4">
               <p className="text-sm font-semibold text-slate-900">Çalışma ilkesi</p>
               <p className="mt-2 text-sm leading-7 text-slate-700">
-                Trafik, veri ve satış sırasını koruruz; önce değer üretir, sonra ölçer, en son
-                ölçekleriz.
+                Önce fayda üretir, sonra etkiyi ölçer, en son büyütürüz.
               </p>
             </div>
           </article>
@@ -78,7 +77,7 @@ export default function AboutPage() {
         <section className="card-panel">
           <p className="eyebrow">İş dağılımı</p>
           <h2 className="mt-4 text-2xl font-semibold text-slate-950">
-            Frontend, backend ve admin rolü net çalışır
+            Görünür yüz, değerlendirme ve yayın birlikte çalışır
           </h2>
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {siteOperations.workStreams.map((stream) => (

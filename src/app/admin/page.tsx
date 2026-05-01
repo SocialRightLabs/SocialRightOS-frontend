@@ -26,7 +26,7 @@ export default function AdminDashboardPage() {
       <section className="card-panel lg:col-span-2">
         <p className="eyebrow">Yönetim Özeti</p>
         <h2 className="mt-4 text-2xl font-semibold text-slate-950">
-          Trafik, içerik ve onay akışı tek panelde
+          İçerik, onay ve yayın akışı tek panelde
         </h2>
         <div className="mt-5 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
           <article className="rounded-2xl bg-slate-50 p-4">
@@ -55,23 +55,23 @@ export default function AdminDashboardPage() {
         <h2 className="mt-4 text-2xl font-semibold text-slate-950">İç çalışma alanı</h2>
         <div className="mt-5 flex flex-col gap-3">
           <Link href="/admin/studio" className="primary-link">
-            Studio&apos;ya geç
+            Yayın Stüdyosu
           </Link>
           <Link href="/admin/content" className="secondary-link">
-            Content Registry
+            İçerik Kaydı
           </Link>
           <Link href="/admin/analytics" className="secondary-link">
-            Analytics Registry
+            Analitik Kaydı
           </Link>
           <Link href="/admin/approval" className="secondary-link">
-            Approval Queue
+            Onay Sırası
           </Link>
         </div>
       </section>
 
       <section className="card-panel">
         <p className="eyebrow">Dağılım</p>
-        <h2 className="mt-4 text-2xl font-semibold text-slate-950">Frontend / backend / admin</h2>
+        <h2 className="mt-4 text-2xl font-semibold text-slate-950">Görünür yüz, sonuç ve yayın</h2>
         <div className="mt-5 space-y-4">
           {siteOperations.workStreams.map((stream) => (
             <article key={stream.key} className="rounded-2xl bg-slate-50 p-4">

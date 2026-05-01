@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { contentRegistry, sourceRegistry } from "@/lib/content-registry";
 
 export const metadata: Metadata = {
-  title: "Content Registry",
+  title: "İçerik Kaydı",
   description: "Sayfa ve kaynak kayıtlarının dosya tabanlı görünümü.",
   robots: {
     index: false,

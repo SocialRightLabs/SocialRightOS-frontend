@@ -19,55 +19,52 @@ export const metadata: Metadata = {
 
 const heroStats = [
   {
-    label: "Canlı akış",
-    value: "Evde bakım",
-    detail: "Ana ön değerlendirme yüzeyi doğrudan rehber deneyimine açılır.",
+    label: "Odak",
+    value: "Net başlangıç",
+    detail: "Soru, sonuç ve sonraki adım tek bir akışta ilerler.",
   },
   {
-    label: "Rehber yaklaşımı",
-    value: "Sade dil",
-    detail: "Karmaşık mevzuatı anlaşılır ön değerlendirme diline çevirir.",
+    label: "Dil",
+    value: "Anlaşılır",
+    detail: "Karmaşık başlıkları günlük dile indirir.",
   },
   {
-    label: "Güven ilkesi",
-    value: "Az veri",
-    detail: "Gereksiz kişisel veri istemeden yol gösterir.",
+    label: "Güven",
+    value: "Sakin",
+    detail: "Yalnızca gerekli bilgiler alınır.",
   },
 ];
 
 const trustCards = [
   {
-    title: "Ne yapar?",
-    body:
-      "Ziyaretçiyi ilgili uygunluk testine taşır, sonucu sadeleştirir ve başvuruya giden yolu netleştirir.",
+    title: "Nasıl çalışır?",
+    body: "Ziyaretçiyi ilgili teste taşır, sonucu sade bir dille gösterir ve sonraki adımı netleştirir.",
   },
   {
-    title: "Ne yapmaz?",
-    body:
-      "Resmî karar vermez, kurumsal yerini almaz ve kullanıcıyı gereksiz veri toplamaya zorlamaz.",
+    title: "Sınırı nedir?",
+    body: "Resmî karar vermez, kullanıcıyı gereksiz veri toplamaya zorlamaz ve kurum yerine geçmez.",
   },
   {
-    title: "Neden farklı?",
-    body:
-      "Yalnızca bir form değil; içerik, yönlendirme ve güven katmanını birlikte çalışan bir rehberdir.",
+    title: "Neden güven verir?",
+    body: "Yalnızca bir form değil; açıklama, yönlendirme ve güven hissini birlikte verir.",
   },
 ];
 
 const liveExperienceCards = [
   {
-    title: "Karar motoru",
+    title: "Açık anlatım",
     body:
-      "Değerlendirme, kanonik uygunluk sözleşmesine göre çalışır. Sonuçlar açıklanabilir şekilde ELIGIBLE, NOT_ELIGIBLE veya NEEDS_INFO olarak sunulur.",
+      "Kısa sorular ilerledikçe sonuç kısa ve anlaşılır bir özet halinde gösterilir.",
   },
   {
     title: "Kapsam",
     body:
-      "Canlı öncelikli akış evde bakım yönünden başlar; GSS, 65 yaş aylığı ve doğum yardımı için de doğrudan girişler korunur.",
+      "Evde bakım, GSS, 65 yaş aylığı ve doğum yardımı için doğrudan girişler sunulur.",
   },
   {
-    title: "Veri minimizasyonu",
+    title: "Gizlilik ilkesi",
     body:
-      "Kimlik numarası, açık adres ve belge yükleme istemeden yalnızca ön değerlendirme için gerekli bilgiler alınır.",
+      "Kimlik numarası, açık adres ve belge yükleme istemeden yalnızca gerekli bilgiler alınır.",
   },
 ];
 
@@ -130,10 +127,10 @@ export default function Home() {
 
           <aside className="hero-aside">
             <div className="panel-soft">
-              <span className="status-pill">Canlı değerlendirme ve rehberlik yüzeyi</span>
+              <span className="status-pill">Canlı rehber deneyimi</span>
               <p className="mt-4 text-sm leading-7 text-slate-700">
-                Sitede önce doğru yönlendirme, sonra sade açıklama gelir. Bu yapı sosyal hak
-                bilgisini tek bakışta kullanılabilir hale getirmek için kuruldu.
+                Önce doğru yönlendirme, sonra sade açıklama gelir. Bu yapı sosyal hak bilgisini
+                tek bakışta kullanılabilir hale getirmek için kuruldu.
               </p>
             </div>
 
@@ -150,8 +147,8 @@ export default function Home() {
             <div className="panel mt-4">
               <p className="section-label">Bu sayfada ne var?</p>
               <div className="mt-4 space-y-3 text-sm leading-7 text-slate-700">
-                <p>Canlı ön değerlendirme girişleri</p>
-                <p>Ön değerlendirme ve rehber açıklaması</p>
+                <p>Canlı test girişleri</p>
+                <p>Sonuç açıklaması ve rehber notları</p>
                 <p>Sonraki adım için güvenli yönlendirme</p>
               </div>
             </div>
@@ -174,22 +171,21 @@ export default function Home() {
         <div className="panel-strong">
           <div className="section-header">
             <div>
-              <p className="section-label">Canlı değerlendirme</p>
+              <p className="section-label">Canlı rehber</p>
               <h2 className="section-heading mt-3">
-                Ön değerlendirme, şeffaflık ve yönlendirme aynı yüzeyde birleşir
+                Sade açıklama, güvenli yönlendirme ve net adımlar aynı yerde
               </h2>
             </div>
             <p className="section-copy max-w-2xl">
-              Canlı sitedeki yaklaşım doğrultusunda kullanıcı önce birkaç temel bilgi verir,
-              sonra açıklamalı sonuç görür ve gerekirse rehberlik talebine yönelir. Bu sayfa da
-              aynı mantığı giriş seviyesinde görünür kılar.
+              Kullanıcı önce birkaç temel bilgi verir, sonra açıklamalı sonucu görür ve gerekirse
+              ilgili rehbere yönelir. Bu sayfa da aynı mantığı giriş seviyesinde görünür kılar.
             </p>
           </div>
 
           <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {liveExperienceCards.map((card) => (
               <article key={card.title} className="tool-card">
-                <p className="status-pill">Şeffaf katman</p>
+                <p className="status-pill">Açık anlatım</p>
                 <h3 className="mt-4 text-lg font-semibold text-slate-950">{card.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700">{card.body}</p>
               </article>
@@ -213,14 +209,14 @@ export default function Home() {
         <div className="panel-strong">
           <div className="section-header">
             <div>
-              <p className="section-label">Değerlendirme alanları</p>
+              <p className="section-label">Başlangıç alanları</p>
               <h2 className="section-heading mt-3">
                 En ilgili uygunluk testine tek adımda girin
               </h2>
             </div>
             <p className="section-copy max-w-2xl">
-              Hangi başlık size daha yakınsa oradan başlayın. Her kart sizi doğrudan ilgili ön
-              değerlendirme veya rehber yüzeyine taşır.
+              Hangi başlık size daha yakınsa oradan başlayın. Her kart sizi doğrudan ilgili test
+              veya rehber sayfasına taşır.
             </p>
           </div>
 
@@ -278,7 +274,7 @@ export default function Home() {
           <article className="panel-strong">
             <p className="section-label">Danışmanlık yaklaşımı</p>
             <h2 className="section-heading mt-3 text-[2rem]">
-              Bu yüzey, sosyal hizmet odaklı bir dijital rehberlik projesidir
+              Bu site, sosyal hak bilgisini anlaşılır ve güven veren bir deneyime dönüştürür
             </h2>
             <p className="section-copy mt-4">
               {siteProfile.trustPoints[0]} {siteProfile.professionalSummary}
@@ -313,4 +309,3 @@ export default function Home() {
     </main>
   );
 }
-

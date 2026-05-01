@@ -81,11 +81,11 @@ const missingFactMap: Record<string, OldAgeExplanationItem> = {
 const fallbackByStatus: Record<EligibilityStatus, OldAgeExplanationItem> = {
   ELIGIBLE: {
     title: "65 yaş aylığı için olumlu görünüyor",
-    body: "Mevcut bilgilerle değerlendirme sistemi olumlu bir ön değerlendirme döndürdü.",
+    body: "Mevcut bilgilerle ön değerlendirme aracı olumlu bir sonuç döndürdü.",
   },
   NOT_ELIGIBLE: {
     title: "65 yaş aylığı için uygun görünmüyor",
-    body: "Mevcut bilgilerle değerlendirme sistemi olumsuz bir ön değerlendirme döndürdü.",
+    body: "Mevcut bilgilerle ön değerlendirme aracı olumsuz bir sonuç döndürdü.",
   },
   NEEDS_INFO: {
     title: "Karar için ek bilgi gerekiyor",
@@ -127,7 +127,7 @@ export function buildOldAgeDecisionViewModel(input: {
     return {
       title: "65 yaş aylığı için uygun görünüyorsunuz",
       summary:
-        "Değerlendirme sistemi mevcut bilgilerle olumlu bir ön değerlendirme döndürdü. Bu sonuç resmî karar yerine geçmez.",
+        "Ön değerlendirme aracı mevcut bilgilerle olumlu bir sonuç döndürdü. Bu sonuç resmî karar yerine geçmez.",
       primaryReason: primaryReason ?? fallbackByStatus[status],
       secondaryReasons,
       missingInformation,
@@ -162,7 +162,7 @@ export function buildOldAgeDecisionViewModel(input: {
   return {
     title: "65 yaş aylığı için uygun görünmüyorsunuz",
     summary:
-      "Değerlendirme sistemi girilen bilgilerle olumsuz bir ön değerlendirme döndürdü. Bu sonuç resmî kurum kararı yerine geçmez.",
+      "Ön değerlendirme aracı girilen bilgilerle olumsuz bir sonuç döndürdü. Bu sonuç resmî kurum kararı yerine geçmez.",
     primaryReason: primaryReason ?? fallbackByStatus[status],
     secondaryReasons,
     missingInformation,
@@ -175,4 +175,3 @@ export function buildOldAgeDecisionViewModel(input: {
     ],
   };
 }
-

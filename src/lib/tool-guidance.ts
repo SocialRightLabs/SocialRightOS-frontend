@@ -32,7 +32,7 @@ const guidanceByTool: Record<ToolKey, ToolGuidanceModel> = {
       {
         href: "/evde-bakim-maasi/gelir-ve-hane-bilgisi",
         label: "Gelir ve hane bilgisi rehberi",
-        body: "Gelir kapısının neden yalnızca yol gösterici olduğunu ve hangi bilgilerin istendiğini açıklar.",
+        body: "Gelir bilgisinin neden yol gösterici olduğunu ve hangi bilgilerin istendiğini açıklar.",
       },
     ],
     otherTests: [
@@ -150,4 +150,3 @@ const guidanceByTool: Record<ToolKey, ToolGuidanceModel> = {
 export function getToolGuidanceModel(tool: ToolKey): ToolGuidanceModel {
   return guidanceByTool[tool];
 }
-

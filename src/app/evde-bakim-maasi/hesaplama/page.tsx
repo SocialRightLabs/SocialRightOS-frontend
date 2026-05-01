@@ -255,8 +255,8 @@ export default function HesaplamaPage() {
             <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 md:col-span-2">
               <p className="text-sm font-medium text-slate-900">Yerleşim ve kimlik yolu</p>
               <p className="mt-2 text-xs leading-6 text-slate-600">
-                Emin değilseniz Bilmiyorum seçeneğini kullanın. Bilinmeyen alanlar değerlendirme
-                sistemine eksik bilgi olarak gönderilir.
+                Emin değilseniz Bilmiyorum seçeneğini kullanın. Bilinmeyen alanlar ön bakış
+                akışında eksik bilgi olarak görünür.
               </p>
               <TriStateField
                 className="mt-4"
@@ -323,7 +323,7 @@ export default function HesaplamaPage() {
               <p className="text-sm font-medium text-slate-900">Sağlık ve bakım ihtiyacı</p>
               <p className="mt-2 text-xs leading-6 text-slate-600">
                 Bu bölümde bakım ihtiyacı ve heyet teyidi ana sorulardır. Sağlık raporundaki oran
-                tek başına yeterli karar üretmez.
+                tek başına yeterli sonuç üretmez.
               </p>
 
               <label className="form-field mt-4">
@@ -347,8 +347,8 @@ export default function HesaplamaPage() {
                 />
               </label>
               <p className="mt-2 text-xs leading-6 text-slate-600">
-                Ayrı bir “geçerli sağlık raporu” sorusu gösterilmez. Bu oranı girmeniz
-                sağlık raporu bilgisini bu aşama için tamamlar.
+                Ayrı bir “geçerli sağlık raporu” sorusu gösterilmez. Bu oranı girmeniz sağlık
+                raporu bilgisini bu aşama için tamamlar.
               </p>
 
               <TriStateField
@@ -371,20 +371,20 @@ export default function HesaplamaPage() {
 
               <div className="mt-5 grid gap-5 md:grid-cols-2">
                 <div>
-                  <TriStateField
-                    legend="Heyet bakım raporu veya bakım ihtiyacı tespiti var mı?"
-                    name="careNeedConfirmedByBoard"
-                    value={form.careNeedConfirmedByBoard}
-                    onChange={(value) => {
+              <TriStateField
+                legend="Heyet bakım raporu veya bakım ihtiyacı tespiti var mı?"
+                name="careNeedConfirmedByBoard"
+                value={form.careNeedConfirmedByBoard}
+                onChange={(value) => {
                       markFormStarted();
                       setForm((current) => ({
-                        ...current,
-                        careNeedConfirmedByBoard: value,
-                      }));
-                    }}
+                      ...current,
+                      careNeedConfirmedByBoard: value,
+                    }));
+                  }}
                   />
                   <p className="mt-2 text-xs leading-6 text-slate-600">
-                    Bu soru 2026 uygulamasındaki bakım ihtiyacı teyidini yansıtır.
+                    Bu soru bakım ihtiyacının güncel teyidi için kullanılır.
                   </p>
                 </div>
 

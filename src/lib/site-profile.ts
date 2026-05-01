@@ -28,9 +28,9 @@ export const siteProfile: SiteProfile = {
   siteName: "Sosyal Hak Rehberi",
   tagline: "Dijital Sosyal Hak Rehberi",
   mission:
-    "Sosyal haklara erişimi sade, anlaşılır ve güvenilir bir rehberlik deneyimine dönüştürmek.",
+    "Sosyal haklara erişimi sade, anlaşılır ve güven veren bir rehberlik deneyimine dönüştürmek.",
   vision:
-    "Türkiye'de sosyal hak bilgisini erişilebilir, ölçülebilir ve kullanıcıyı doğru adıma yönlendiren bir dijital rehber standardına taşımak.",
+    "Türkiye'de sosyal hak bilgisini erişilebilir, anlaşılır ve kullanıcıyı doğru adıma yönlendiren bir dijital rehber standardına taşımak.",
   founderName: "Senih Bayankulu",
   founderRole: "Bireysel Sosyal Hizmet Danışmanı",
   founderSummary:
@@ -90,6 +90,6 @@ export const siteProfile: SiteProfile = {
   trustPoints: [
     "Site resmî kurum değildir; ön değerlendirme ve rehberlik sunar.",
     "Gereksiz kişisel veri istemeden, sade ve anlaşılır bir akış hedefler.",
-    "Kararlar açıklanabilir biçimde gösterilir; sonuçlar kaynak ve gerekçe ile desteklenir.",
+    "Sonuçlar açıklanabilir biçimde gösterilir; kaynak ve gerekçe ile desteklenir.",
   ],
 };

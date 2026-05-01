@@ -188,8 +188,8 @@ export function IncomeTestPageClient() {
           </h1>
           <p className="mt-4 max-w-3xl text-base leading-8 text-slate-700">
             Hane kişi sayısı ve toplam gelir bilgisini gönderin. Sonuç yalnızca
-            değerlendirme sisteminden gelen uygunluk durumu, kişi başı gelir,
-            eşik ve rehber ipuçlarıyla gösterilir.
+            ön değerlendirme aracından gelen uygunluk durumu, kişi başı gelir, eşik ve rehber
+            ipuçlarıyla gösterilir.
           </p>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -497,7 +497,7 @@ export function IncomeTestPageClient() {
             <h2 className="text-lg font-semibold text-slate-950">Nasıl çalışır?</h2>
             <p className="mt-3 text-sm leading-7 text-slate-700">
               Bu sayfa yalnız form verisini gönderir. Uygunluk kararı, kişi başı
-              gelir, eşik ve rehber ipuçları değerlendirme sistemi tarafından hazırlanır.
+              gelir, eşik ve rehber ipuçları ön değerlendirme aracı tarafından hazırlanır.
             </p>
           </div>
 
@@ -515,4 +515,3 @@ export function IncomeTestPageClient() {
     </main>
   );
 }
-

@@ -29,11 +29,11 @@ export function buildTrustLayerModel(input: {
     items: [
       {
         title: "Bu bir ön değerlendirmedir",
-        body: "Bu ekrandaki sonuç resmî kurum kararı yerine geçmez. Nihai değerlendirme ilgili kurum incelemesiyle yapılır.",
+        body: "Bu ekrandaki sonuç resmî kurum kararı yerine geçmez. Son adım ilgili kurumun incelemesidir.",
       },
       {
-        title: "Karar kuralları ayrı değerlendirilir",
-        body: "Bu sayfa yalnızca sonucu sunar. Eşikler, kurallar ve değerlendirmenin anlamı ayrı sistemde yönetilir.",
+        title: "Ayrıntılar arka plandadır",
+        body: "Bu sayfa yalnızca sonucu sunar. Eşikler, kurallar ve açıklamalar arka planda yönetilir.",
       },
       {
         title: "Gereksiz kişisel veri istenmez",
@@ -41,7 +41,7 @@ export function buildTrustLayerModel(input: {
       },
       {
         title: "Değerlendirme bağlamı kayıtlıdır",
-        body: `Bu sonuç değerlendirme sürümü ${policyVersion} ve değerlendirme tarihi ${evaluationDate} ile üretilmiştir.`,
+        body: `Bu sonuç sürüm ${policyVersion} ve tarih ${evaluationDate} ile üretilmiştir.`,
       },
     ],
     links: [
@@ -60,4 +60,3 @@ export function buildTrustLayerModel(input: {
     ],
   };
 }
-

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Admin",
+  title: "İç Panel",
   description: "İç yönetim, içerik taslağı, onay ve yayın akışı.",
   robots: {
     index: false,
@@ -11,11 +11,11 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  { href: "/admin", label: "Dashboard" },
-  { href: "/admin/studio", label: "Studio" },
-  { href: "/admin/content", label: "Content Registry" },
-  { href: "/admin/analytics", label: "Analytics Registry" },
-  { href: "/admin/approval", label: "Approval Queue" },
+  { href: "/admin", label: "Genel Bakış" },
+  { href: "/admin/studio", label: "Yayın Stüdyosu" },
+  { href: "/admin/content", label: "İçerik Kaydı" },
+  { href: "/admin/analytics", label: "Analitik Kaydı" },
+  { href: "/admin/approval", label: "Onay Sırası" },
 ];
 
 export default function AdminLayout({
@@ -31,11 +31,11 @@ export default function AdminLayout({
           <div className="section-header mt-4">
             <div>
               <h1 className="section-heading text-[clamp(2rem,3vw,3.2rem)]">
-                Sosyal Hak Rehberi Admin
+                Sosyal Hak Rehberi İç Panel
               </h1>
               <p className="section-copy mt-3 max-w-3xl">
-                İçerik taslağı, sayfa düzeni, yayın onayı ve analitik kaydının toplandığı yönetim
-                yüzeyi.
+                İçerik taslağı, sayfa düzeni, yayın onayı ve analitik kaydının toplandığı iç
+                yönetim alanı.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | Sosyal Hak Rehberi",
   },
   description:
-    "Sosyal hak testleri ve başvuru rehberleri için güven odaklı bir yol gösterici yüz. Resmî karar üretmez; ön değerlendirme ve açıklayıcı rehberlik sunar.",
+    "Sosyal hak testleri ve başvuru rehberleri için güven veren, sade ve açıklayıcı bir başlangıç deneyimi. Resmî karar vermez; yol gösterir.",
   applicationName: "Sosyal Hak Rehberi",
   keywords: [
     "sosyal hak testi",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sosyal Hak Rehberi",
     description:
-      "Sosyal hak testleri için açıklayıcı, güven veren ve anlaşılır bir yol gösterici deneyim.",
+      "Sosyal hak testleri için açıklayıcı, güven veren ve anlaşılır bir rehber deneyimi.",
     type: "website",
     locale: "tr_TR",
     siteName: "Sosyal Hak Rehberi",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sosyal Hak Rehberi",
     description:
-      "Sosyal hak testleri ve rehberleri için güven odaklı ön değerlendirme deneyimi.",
+      "Sosyal hak testleri ve rehberleri için güven odaklı rehber deneyimi.",
   },
   robots: {
     index: allowIndexing,
@@ -70,7 +70,7 @@ export default function RootLayout({
                 <span>
                   <span className="block text-sm text-slate-900">Sosyal Hak Rehberi</span>
                   <span className="block text-[0.68rem] font-medium tracking-[0.28em] text-slate-500 uppercase">
-                    Dijital rehber yüzeyi
+                    Açık rehber alanı
                   </span>
                 </span>
               </Link>
@@ -90,10 +90,10 @@ export default function RootLayout({
 
           <div className="site-status-banner">
             <div className="site-status-banner-inner" role="note" aria-label="Önemli site notu">
-              <span className="site-status-label">Canlı rehber yüzeyi</span>
+              <span className="site-status-label">Canlı rehber alanı</span>
               <p className="site-status-copy">
-                Site resmî kurum kararı vermez. Ön değerlendirme, açıklayıcı rehberlik ve sonraki
-                adımı netleştiren bir sosyal hak yüzeyi olarak çalışır.
+                Site resmî kurum kararı vermez. Kullanıcıya sade açıklama, güvenli yönlendirme ve
+                sonraki adımı netleştiren bir rehber sunar.
               </p>
             </div>
           </div>
@@ -106,11 +106,11 @@ export default function RootLayout({
                 <div>
                   <p className="section-label">Güven notu</p>
                   <h2 className="section-heading mt-3 text-[2rem]">
-                    Doğru yönlendirme, sade akış ve açıklanabilir sonuç
+                    Doğru yönlendirme, sade akış ve açık anlatım
                   </h2>
                 </div>
                 <p className="section-copy max-w-xl">
-                  Bu yüzeyin amacı kullanıcıyı gereksiz karmaşıklıktan uzak tutmak, doğru teste
+                  Bu alanın amacı kullanıcıyı gereksiz karmaşıklıktan uzak tutmak, doğru teste
                   hızla taşımak ve sonuca anlamlı bağlam eklemektir.
                 </p>
               </div>
