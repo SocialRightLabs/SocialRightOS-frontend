@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import type { ApiErrorResponse } from "./api";
+import type { ApiErrorResponse } from "./types.ts";
 
 const originalFetch = globalThis.fetch;
 const originalApiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
@@ -12,7 +12,7 @@ async function loadApiModule() {
 }
 
 test("createLead surfaces backend validation payloads", async () => {
-  globalThis.fetch = async () =>
+  globalThis.fetch = (async () =>
     new Response(
       JSON.stringify({
         message: "The request payload is invalid.",
@@ -30,7 +30,7 @@ test("createLead surfaces backend validation payloads", async () => {
           "X-Correlation-ID": "corr-123",
         },
       },
-    ) as typeof fetch;
+    )) as typeof fetch;
 
   const { ApiClientError, createLead } = await loadApiModule();
 

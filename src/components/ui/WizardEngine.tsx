@@ -25,7 +25,7 @@ function speakText(text: string) {
     utter.rate = 0.95;
     window.speechSynthesis.cancel();
     window.speechSynthesis.speak(utter);
-  } catch (e) {
+  } catch {
     // ignore
   }
 }
@@ -40,8 +40,6 @@ export default function WizardEngine({ questions = DEFAULT_QUESTIONS }: WizardEn
   const onChange = (key: number | string, value: string) => {
     setAnswers((s) => ({ ...s, [key]: value }));
   };
-
-  const current = questions[index];
 
   return (
     <section aria-roledescription="wizard" className="max-w-2xl mx-auto">
