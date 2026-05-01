@@ -1,21 +1,4 @@
 "use client";
-import React from "react";
-import WizardEngine, { WizardQuestion } from "../../../components/ui/WizardEngine";
-
-const QUESTIONS: WizardQuestion[] = [
-  {
-    id: "q1",
-    text: "Evinizde tam bağımlı, bakıma muhtaç engelli veya yaşlı bir birey var mı?",
-    type: "boolean",
-  },
-  {
-    id: "q2",
-    text: "Hane içindeki kişi başına düşen aylık geliriniz 11.334 TL'nin altında mı?",
-    type: "boolean",
-  },
-];
-
-// Page wrapper removed in favor of the main `HesaplamaPage` export below.
 
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -833,4 +816,3 @@ export default function HesaplamaPage() {
     </main>
   );
 }
-

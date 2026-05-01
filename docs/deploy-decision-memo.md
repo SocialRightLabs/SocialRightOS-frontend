@@ -12,7 +12,7 @@ Recommended operating model:
 
 - frontend deployment: Vercel or equivalent managed Next.js host
 - backend deployment: existing socialrightlabs deployment track
-- integration point: `NEXT_PUBLIC_API_BASE_URL`
+- integration point: same-origin `/api/*` proxy backed by `NEXT_PUBLIC_API_BASE_URL`
 
 ## Why This Is The Right Next Step
 
@@ -69,4 +69,3 @@ This memo is complete when:
 - a staging backend URL is confirmed
 - the env variable mapping is approved
 - staging smoke validation is scheduled
-

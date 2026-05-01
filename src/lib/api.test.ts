@@ -1,18 +1,15 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import type { ApiErrorResponse } from "./api";
+import type { ApiErrorResponse } from "./types.ts";
 
 const originalFetch = globalThis.fetch;
-const originalApiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-
-process.env.NEXT_PUBLIC_API_BASE_URL = "http://localhost:8080";
 
 async function loadApiModule() {
   return import("./api.ts");
 }
 
 test("createLead surfaces backend validation payloads", async () => {
-  globalThis.fetch = async () =>
+  globalThis.fetch = (async () =>
     new Response(
       JSON.stringify({
         message: "The request payload is invalid.",
@@ -30,7 +27,7 @@ test("createLead surfaces backend validation payloads", async () => {
           "X-Correlation-ID": "corr-123",
         },
       },
-    ) as typeof fetch;
+    )) as typeof fetch;
 
   const { ApiClientError, createLead } = await loadApiModule();
 
@@ -69,24 +66,20 @@ test("createLead falls back to a network error message when the backend cannot b
       assert.equal(error.status, 502);
       assert.equal(
         error.message,
-        "Backend yanıtı alınamadı. CORS ayarlarını veya ağ bağlantısını kontrol edin.",
+        "Backend yanıtı alınamadı. Proxy ayarlarını veya ağ bağlantısını kontrol edin.",
       );
       return true;
     },
   );
 });
 
-test("resolveApiBaseUrl proxies the production backend through Vercel same-origin path", async () => {
+test("resolveApiBaseUrl uses the same-origin API proxy", async () => {
   const { resolveApiBaseUrl } = await loadApiModule();
-  assert.equal(resolveApiBaseUrl("https://api.sosyalhakrehberi.com"), "/api-proxy");
-  assert.equal(resolveApiBaseUrl("http://localhost:8080"), "http://localhost:8080");
+  assert.equal(resolveApiBaseUrl(), "/api");
+  assert.equal(resolveApiBaseUrl("https://api.sosyalhakrehberi.com"), "/api");
+  assert.equal(resolveApiBaseUrl("http://localhost:8080"), "/api");
 });
 
 test.after(() => {
   globalThis.fetch = originalFetch;
-  if (originalApiBaseUrl === undefined) {
-    delete process.env.NEXT_PUBLIC_API_BASE_URL;
-  } else {
-    process.env.NEXT_PUBLIC_API_BASE_URL = originalApiBaseUrl;
-  }
 });
