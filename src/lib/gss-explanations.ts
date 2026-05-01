@@ -169,7 +169,7 @@ export function buildGssDecisionViewModel(input: {
   return {
     title: "GSS gelir testi için uygun görünmüyorsunuz",
     summary:
-      "Ön değerlendirme aracı girilen bilgilerle olumsuz bir sonuç döndürdü. Bu sonuç resmî kurum kararı yerine geçmez.",
+      "Ön değerlendirme aracı girilen bilgilerle olumsuz bir ön değerlendirme üretti. Bu sonuç resmî kurum kararı yerine geçmez.",
     primaryReason: primaryReason ?? fallbackByStatus[status],
     secondaryReasons,
     missingInformation,
