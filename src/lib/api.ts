@@ -8,9 +8,7 @@ import {
   type LeadCreateResponse,
 } from "./types.ts";
 
-const RAW_API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL?.replace(/\/+$/, "");
-const PRODUCTION_API_ORIGIN = "https://api.sosyalhakrehberi.com";
-const PROXY_API_BASE_URL = "/api-proxy";
+const API_PROXY_BASE_URL = "/api";
 
 export class ApiClientError extends Error {
   status: number;
@@ -69,19 +67,16 @@ function toClientError(
   });
 }
 
-export function resolveApiBaseUrl(baseUrl = RAW_API_BASE_URL): string {
+export function resolveApiBaseUrl(baseUrl = API_PROXY_BASE_URL): string {
   if (!baseUrl) {
-    throw new ApiClientError(
-      "Backend bağlantısı yapılandırılmamış. NEXT_PUBLIC_API_BASE_URL ortam değişkenini tanımlayın.",
-      500,
-    );
+    return API_PROXY_BASE_URL;
   }
 
-  if (baseUrl === PRODUCTION_API_ORIGIN) {
-    return PROXY_API_BASE_URL;
+  if (baseUrl.startsWith("/")) {
+    return baseUrl.replace(/\/+$/, "");
   }
 
-  return baseUrl;
+  return API_PROXY_BASE_URL;
 }
 
 function getApiBaseUrl(): string {
@@ -114,7 +109,7 @@ export async function checkEligibility(
     }
 
     throw new ApiClientError(
-      "Backend yanıtı alınamadı. CORS ayarlarını veya ağ bağlantısını kontrol edin.",
+      "Backend yanıtı alınamadı. Proxy ayarlarını veya ağ bağlantısını kontrol edin.",
       502,
     );
   }
@@ -146,7 +141,7 @@ export async function evaluateIncome(
     }
 
     throw new ApiClientError(
-      "Backend yanıtı alınamadı. CORS ayarlarını veya ağ bağlantısını kontrol edin.",
+      "Backend yanıtı alınamadı. Proxy ayarlarını veya ağ bağlantısını kontrol edin.",
       502,
     );
   }
@@ -186,7 +181,7 @@ export async function createLead(
     }
 
     throw new ApiClientError(
-      "Backend yanıtı alınamadı. CORS ayarlarını veya ağ bağlantısını kontrol edin.",
+      "Backend yanıtı alınamadı. Proxy ayarlarını veya ağ bağlantısını kontrol edin.",
       502,
     );
   }

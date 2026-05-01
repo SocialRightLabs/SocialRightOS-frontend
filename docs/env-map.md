@@ -9,7 +9,8 @@ This repository intentionally keeps the runtime surface small.
 Purpose:
 
 - base URL for the socialrightlabs backend
-- used by the typed frontend client in `src/lib/api.ts`
+- used by the server-side API proxy in `src/app/api/[...path]/route.ts`
+- browser requests stay on the same origin and go through `/api/*`
 
 Examples:
 
@@ -21,7 +22,8 @@ Rules:
 
 - do not include a trailing slash
 - do not hardcode the backend URL in page components
-- do not introduce additional frontend policy variables
+- do not call the backend directly from client components
+- keep the proxy target configurable through deployment variables
 
 ### `NEXT_PUBLIC_SITE_URL`
 
@@ -72,8 +74,6 @@ Fallback behavior:
 
 The backend team or backend deployment must confirm:
 
-- CORS origin for the staging frontend
-- CORS origin for the production frontend
 - canonical endpoint availability
 - any required gateway, rate limit, or access constraints
-
+- whether public API paths should remain open or require a service key
