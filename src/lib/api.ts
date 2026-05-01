@@ -8,7 +8,7 @@ import {
   type LeadCreateResponse,
 } from "./types.ts";
 
-const API_PROXY_BASE_URL = "/api";
+const API_PROXY_BASE_URL = "";
 
 export class ApiClientError extends Error {
   status: number;
@@ -76,7 +76,12 @@ export function resolveApiBaseUrl(baseUrl = API_PROXY_BASE_URL): string {
     return baseUrl.replace(/\/+$/, "");
   }
 
-  return API_PROXY_BASE_URL;
+  try {
+    const parsed = new URL(baseUrl);
+    return parsed.origin;
+  } catch {
+    return API_PROXY_BASE_URL;
+  }
 }
 
 function getApiBaseUrl(): string {

@@ -75,9 +75,10 @@ test("createLead falls back to a network error message when the backend cannot b
 
 test("resolveApiBaseUrl uses the same-origin API proxy", async () => {
   const { resolveApiBaseUrl } = await loadApiModule();
-  assert.equal(resolveApiBaseUrl(), "/api");
-  assert.equal(resolveApiBaseUrl("https://api.sosyalhakrehberi.com"), "/api");
-  assert.equal(resolveApiBaseUrl("http://localhost:8080"), "/api");
+  assert.equal(resolveApiBaseUrl(), "");
+  assert.equal(resolveApiBaseUrl("/api"), "/api");
+  assert.equal(resolveApiBaseUrl("https://api.sosyalhakrehberi.com"), "https://api.sosyalhakrehberi.com");
+  assert.equal(resolveApiBaseUrl("http://localhost:8080"), "http://localhost:8080");
 });
 
 test.after(() => {
