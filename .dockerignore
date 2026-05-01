@@ -1,0 +1,13 @@
+.git
+.github
+.next
+node_modules
+coverage
+dist
+*.log
+start.log
+start.err
+README.md
+CONTRIBUTING.md
+SECURITY.md
+docs
