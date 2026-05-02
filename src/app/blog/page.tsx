@@ -1,81 +1,127 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { contentRegistry } from "@/lib/content-registry";
 
 export const metadata: Metadata = {
-  title: "Sosyal Hak Rehber Kütüphanesi",
-  description: "Güncel sosyal haklar, mevzuat değişiklikleri ve başvuru rehberleri.",
+  title: "Blog ve rehber yazıları",
+  description:
+    "Sosyal hak testlerinden yönlendirebileceğiniz rehber yazıları, temel açıklamalar ve başvuru öncesi bilgi sayfaları.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
-const posts = [
-  {
-    slug: "2026-sosyal-yardim-zamlari-evde-bakim-ve-65-yas-ayligi",
-    title: "2026 Sosyal Yardım Zamları: Evde Bakım ve 65 Yaş Aylığı",
-    summary: "2026 yılı sosyal yardım zamları açıklandı. Yeni tutarlar ve başvuru detayları.",
-    category: "Mevzuat",
-    date: "2026-02-12"
-  },
-  {
-    slug: "evde-bakim-maasi",
-    title: "Evde Bakım Maaşı Ana Rehberi",
-    summary: "Ön değerlendirme aracından önce okunması gereken temel bilgiler.",
-    category: "Rehber",
-    date: "2026-01-01"
-  },
-  {
-    slug: "2026-sed-yardimi-rehberi",
-    title: "2026 SED Yardımı: Güncel Tutarlar ve Başvuru",
-    summary: "Çocuk başına 9.723 TL olarak güncellenen SED yardımı detayları.",
-    category: "Haber",
-    date: "2026-02-14"
-  },
-  {
-    slug: "vatandaslik-maasi-2026-rehberi",
-    title: "Vatandaşlık Maaşı 2026: Başvuru Şartları",
-    summary: "Yeni duyurulan vatandaşlık maaşı modeli ve merak edilenler.",
-    category: "Mevzuat",
-    date: "2026-02-14"
-  },
-  {
-    slug: "getad-sistemi-rehberi",
-    title: "GETAD Sistemi: Gelir Tamamlayıcı Destek",
-    summary: "Düşük gelirli aileler için yeni destek sistemi detayları.",
-    category: "Rehber",
-    date: "2026-02-14"
-  }
+const sectionLabelMap: Record<string, string> = {
+  homepage: "Ana Sayfa",
+  about: "Hakkımızda",
+  methodology: "Yöntem",
+  blog: "Blog",
+  tool: "Test",
+  guide: "Rehber",
+};
+
+const contentTopics = [
+  "Şartlar ve temel uygunluk başlıkları",
+  "Gelir ve hane bilgisini doğru hazırlama",
+  "Başvuru öncesi hazırlık adımları",
+  "Gerekli belgeleri anlamaya yardımcı rehberler",
+  "Ret veya eksik bilgi nedenlerini sade dille açıklayan yazı dizileri",
+  "Sık sorulan sorular ve kısa cevaplar",
 ];
 
-export default function BlogListPage() {
-  return (
-    <main className="min-h-screen bg-slate-50 py-12">
-      <div className="container mx-auto px-4 max-w-5xl">
-        <header className="mb-12 text-center">
-          <h1 className="text-4xl font-bold text-slate-900 mb-4">Rehber Kütüphanesi</h1>
-          <p className="text-lg text-slate-600">Sosyal haklarınızla ilgili en güncel bilgilere ve başvuru rehberlerine buradan ulaşabilirsiniz.</p>
-        </header>
+const publishedEntries = [...contentRegistry]
+  .filter((entry) => entry.status === "published")
+  .sort((left, right) => right.updated_at.localeCompare(left.updated_at));
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {posts.map((post) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-              <article className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-300 transition-all h-full flex flex-col">
-                <div className="flex justify-between items-start mb-4">
-                  <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-wider">
-                    {post.category}
-                  </span>
-                  <time className="text-sm text-slate-400">{post.date}</time>
-                </div>
-                <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3">
-                  {post.title}
-                </h2>
-                <p className="text-slate-600 mb-6 flex-grow">
-                  {post.summary}
+export default function BlogPage() {
+  return (
+    <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
+      <div className="mx-auto max-w-6xl space-y-8">
+        <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
+          <article className="card-panel">
+            <p className="eyebrow">Blog ve Rehberler</p>
+            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
+              Testlerden sonra yolunuzu bulmanıza yardım eden rehber sayfaları
+            </h1>
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
+              Bu sayfa sosyal hak testlerinden yönleneceğiniz rehber yazılarını bir araya getirir.
+              Amacımız teknik dili azaltmak, sonraki adımı göstermek ve kullanıcının sitede doğal
+              biçimde ilerlemesini sağlamaktır.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link href="/" className="primary-link">
+                Testlere dön
+              </Link>
+              <Link href="/hakkimizda" className="secondary-link">
+                Hakkımızda
+              </Link>
+            </div>
+          </article>
+
+          <aside className="card-panel">
+            <h2 className="text-xl font-semibold text-slate-950">Bu sayfada ne var?</h2>
+            <p className="mt-3 text-sm leading-7 text-slate-700">
+              Blog yüzeyi kurum duyurusu veya resmî mevzuat servisi değildir. Testlerden sonra
+              kullanıcının anlayacağı dilde açıklama, rehberlik ve bir sonraki adım yönlendirmesi
+              sunar.
+            </p>
+          </aside>
+        </section>
+
+        <section className="card-panel">
+          <h2 className="text-2xl font-semibold text-slate-950">Öne çıkan rehberler</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-3">
+            {publishedEntries.slice(0, 3).map((entry) => (
+              <article key={entry.canonical_path} className="rounded-2xl bg-slate-50 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
+                  {sectionLabelMap[entry.section] ?? "İçerik"}
                 </p>
-                <div className="text-blue-600 font-medium flex items-center gap-2">
-                  Rehberi Oku <span>→</span>
+                <h3 className="mt-3 text-lg font-semibold text-slate-950">{entry.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{entry.body}</p>
+                <Link href={entry.canonical_path} className="secondary-link mt-4 inline-flex">
+                  Yazıyı aç
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="card-panel">
+          <h2 className="text-2xl font-semibold text-slate-950">Tüm yayınlanan içerikler</h2>
+          <div className="mt-5 grid gap-4 md:grid-cols-2">
+            {publishedEntries.map((entry) => (
+              <article key={entry.canonical_path} className="rounded-2xl bg-slate-50 p-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  {sectionLabelMap[entry.section] ?? "İçerik"}
+                </p>
+                <h3 className="mt-3 text-lg font-semibold text-slate-950">{entry.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{entry.body}</p>
+                <div className="mt-4 flex flex-col gap-2">
+                  <Link href={entry.canonical_path} className="secondary-link inline-flex">
+                    Sayfayı aç
+                  </Link>
+                  <span className="text-xs text-slate-500">{entry.canonical_path}</span>
                 </div>
               </article>
-            </Link>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="card-panel">
+          <h2 className="text-2xl font-semibold text-slate-950">
+            Blog yapısında işleyeceğimiz ana başlıklar
+          </h2>
+          <div className="mt-5 grid gap-3 md:grid-cols-2">
+            {contentTopics.map((topic) => (
+              <article
+                key={topic}
+                className="rounded-2xl bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-700"
+              >
+                {topic}
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </main>
   );
