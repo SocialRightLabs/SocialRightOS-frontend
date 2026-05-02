@@ -20,6 +20,20 @@ const posts = [
     summary: "Ön değerlendirme aracından önce okunması gereken temel bilgiler.",
     category: "Rehber",
     date: "2026-01-01"
+  },
+  {
+    slug: "sed-yardimi-2026-guncel-tutarlari-aciklandi",
+    title: "SED Yardımı 2026: Güncel Tutarlar ve Başvuru",
+    summary: "Çocuk başına 9.723 TL olarak güncellenen SED yardımı detayları.",
+    category: "Haber",
+    date: "2026-02-14"
+  },
+  {
+    slug: "vatandaslik-maasi-2026-kimler-yararlanacak",
+    title: "Vatandaşlık Maaşı 2026: Başvuru Şartları",
+    summary: "Yeni duyurulan vatandaşlık maaşı modeli ve merak edilenler.",
+    category: "Mevzuat",
+    date: "2026-02-14"
   }
 ];
 
