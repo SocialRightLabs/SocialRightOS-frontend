@@ -22,17 +22,24 @@ const posts = [
     date: "2026-01-01"
   },
   {
-    slug: "sed-yardimi-2026-guncel-tutarlari-aciklandi",
-    title: "SED Yardımı 2026: Güncel Tutarlar ve Başvuru",
+    slug: "2026-sed-yardimi-rehberi",
+    title: "2026 SED Yardımı: Güncel Tutarlar ve Başvuru",
     summary: "Çocuk başına 9.723 TL olarak güncellenen SED yardımı detayları.",
     category: "Haber",
     date: "2026-02-14"
   },
   {
-    slug: "vatandaslik-maasi-2026-kimler-yararlanacak",
+    slug: "vatandaslik-maasi-2026-rehberi",
     title: "Vatandaşlık Maaşı 2026: Başvuru Şartları",
     summary: "Yeni duyurulan vatandaşlık maaşı modeli ve merak edilenler.",
     category: "Mevzuat",
+    date: "2026-02-14"
+  },
+  {
+    slug: "getad-sistemi-rehberi",
+    title: "GETAD Sistemi: Gelir Tamamlayıcı Destek",
+    summary: "Düşük gelirli aileler için yeni destek sistemi detayları.",
+    category: "Rehber",
     date: "2026-02-14"
   }
 ];
