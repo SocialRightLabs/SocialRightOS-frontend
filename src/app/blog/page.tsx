@@ -2,115 +2,59 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Blog ve rehber yazıları",
-  description:
-    "Sosyal hak testlerinden yönlendirebileceğiniz rehber yazıları, temel açıklamalar ve başvuru öncesi bilgi sayfaları.",
-  alternates: {
-    canonical: "/blog",
-  },
+  title: "Sosyal Hak Rehber Kütüphanesi",
+  description: "Güncel sosyal haklar, mevzuat değişiklikleri ve başvuru rehberleri.",
 };
 
-const featuredPosts = [
+const posts = [
   {
-    href: "/evde-bakim-maasi",
-    title: "Evde Bakım Maaşı ana rehberi",
-    category: "Evde Bakım",
-    body:
-      "Ön değerlendirme aracından önce veya sonra okunabilecek temel çerçeveyi, sınırları ve sonucu nasıl yorumlamanız gerektiğini toplar.",
+    slug: "2026-sosyal-yardim-zamlari-evde-bakim-ve-65-yas-ayligi",
+    title: "2026 Sosyal Yardım Zamları: Evde Bakım ve 65 Yaş Aylığı",
+    summary: "2026 yılı sosyal yardım zamları açıklandı. Yeni tutarlar ve başvuru detayları.",
+    category: "Mevzuat",
+    date: "2026-02-12"
   },
   {
-    href: "/gss-gelir-testi/rehber",
-    title: "GSS gelir testi rehberi",
-    category: "GSS",
-    body:
-      "Gelir, sosyal güvence ve sigorta sorularının neden sorulduğunu açıklar; sonuç ekranını sade bir dille yorumlar.",
-  },
-  {
-    href: "/65-yas-ayligi-uygunluk-testi/rehber",
-    title: "65 Yaş Aylığı rehberi",
-    category: "65 Yaş",
-    body:
-      "Yaş, gelir, eş durumu ve sosyal güvence bilgilerinin neden istendiğini ve eksik bilgi sonucunun ne anlattığını açıklar.",
-  },
+    slug: "evde-bakim-maasi",
+    title: "Evde Bakım Maaşı Ana Rehberi",
+    summary: "Ön değerlendirme aracından önce okunması gereken temel bilgiler.",
+    category: "Rehber",
+    date: "2026-01-01"
+  }
 ];
 
-const contentTopics = [
-  "Şartlar ve temel uygunluk başlıkları",
-  "Gelir ve hane bilgisini doğru hazırlama",
-  "Başvuru öncesi hazırlık adımları",
-  "Gerekli belgeleri anlamaya yardımcı rehberler",
-  "Ret veya eksik bilgi nedenlerini sade dille açıklayan yazı dizileri",
-  "Sık sorulan sorular ve kısa cevaplar",
-];
-
-export default function BlogPage() {
+export default function BlogListPage() {
   return (
-    <main className="min-h-screen px-6 py-12 lg:px-10 lg:py-16">
-      <div className="mx-auto max-w-6xl space-y-8">
-        <section className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_320px]">
-          <article className="card-panel">
-            <p className="eyebrow">Blog ve Rehberler</p>
-            <h1 className="mt-4 text-4xl font-semibold tracking-tight text-slate-950 sm:text-5xl">
-              Testlerden sonra yolunuzu bulmanıza yardım eden rehber sayfaları
-            </h1>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
-              Bu sayfa sosyal hak testlerinden yönleneceğiniz rehber yazılarını bir araya getirir.
-              Amacımız teknik dili azaltmak, sonraki adımı göstermek ve kullanıcının sitede doğal
-              biçimde ilerlemesini sağlamaktır.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <Link href="/" className="primary-link">
-                Testlere dön
-              </Link>
-              <Link href="/hakkimizda" className="secondary-link">
-                Hakkımızda
-              </Link>
-            </div>
-          </article>
+    <main className="min-h-screen bg-slate-50 py-12">
+      <div className="container mx-auto px-4 max-w-5xl">
+        <header className="mb-12 text-center">
+          <h1 className="text-4xl font-bold text-slate-900 mb-4">Rehber Kütüphanesi</h1>
+          <p className="text-lg text-slate-600">Sosyal haklarınızla ilgili en güncel bilgilere ve başvuru rehberlerine buradan ulaşabilirsiniz.</p>
+        </header>
 
-          <aside className="card-panel">
-            <h2 className="text-xl font-semibold text-slate-950">Bu sayfada ne var?</h2>
-            <p className="mt-3 text-sm leading-7 text-slate-700">
-              Blog yüzeyi kurum duyurusu veya resmî mevzuat servisi değildir. Testlerden sonra
-              kullanıcının anlayacağı dilde açıklama, rehberlik ve bir sonraki adım yönlendirmesi
-              sunar.
-            </p>
-          </aside>
-        </section>
-
-        <section className="card-panel">
-          <h2 className="text-2xl font-semibold text-slate-950">Öne çıkan rehberler</h2>
-          <div className="mt-5 grid gap-4 md:grid-cols-3">
-            {featuredPosts.map((post) => (
-              <article key={post.href} className="rounded-2xl bg-slate-50 p-5">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
-                  {post.category}
+        <div className="grid md:grid-cols-2 gap-8">
+          {posts.map((post) => (
+            <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
+              <article className="bg-white p-8 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md hover:border-blue-300 transition-all h-full flex flex-col">
+                <div className="flex justify-between items-start mb-4">
+                  <span className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-xs font-bold uppercase tracking-wider">
+                    {post.category}
+                  </span>
+                  <time className="text-sm text-slate-400">{post.date}</time>
+                </div>
+                <h2 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-3">
+                  {post.title}
+                </h2>
+                <p className="text-slate-600 mb-6 flex-grow">
+                  {post.summary}
                 </p>
-                <h3 className="mt-3 text-lg font-semibold text-slate-950">{post.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700">{post.body}</p>
-                <Link href={post.href} className="secondary-link mt-4 inline-flex">
-                  Yazıyı aç
-                </Link>
+                <div className="text-blue-600 font-medium flex items-center gap-2">
+                  Rehberi Oku <span>→</span>
+                </div>
               </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="card-panel">
-          <h2 className="text-2xl font-semibold text-slate-950">
-            Blog yapısında işleyeceğimiz ana başlıklar
-          </h2>
-          <div className="mt-5 grid gap-3 md:grid-cols-2">
-            {contentTopics.map((topic) => (
-              <article
-                key={topic}
-                className="rounded-2xl bg-slate-50 px-5 py-4 text-sm leading-7 text-slate-700"
-              >
-                {topic}
-              </article>
-            ))}
-          </div>
-        </section>
+            </Link>
+          ))}
+        </div>
       </div>
     </main>
   );
