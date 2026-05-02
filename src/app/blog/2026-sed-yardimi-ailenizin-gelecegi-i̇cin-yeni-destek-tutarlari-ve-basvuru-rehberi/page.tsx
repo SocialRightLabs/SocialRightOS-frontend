@@ -41,7 +41,7 @@ export default function Page() {
 
 ## Giriş: SED Yardımı Nedir ve Neden Önemlidir?
 
-Değerli okuyucularımız, Türkiye'de Aile ve Sosyal Hizmetler Bakanlığı tarafından yürütülen Sosyal ve Ekonomik Destek (SED) yardımı, ailesi maddi imkanları yetersiz olan veya sosyal risklerle karşı karşıya kalan çocukların, kendi aile ortamlarında temel ihtiyaçlarının karşılanması ve sağlıklı gelişimlerini sürdürebilmeleri amacıyla sağlanan önemli bir sosyal hizmet modelidir.
+Değerli okuyucularımız, Türkiye&rsquo;de Aile ve Sosyal Hizmetler Bakanlığı tarafından yürütülen Sosyal ve Ekonomik Destek (SED) yardımı, ailesi maddi imkanları yetersiz olan veya sosyal risklerle karşı karşıya kalan çocukların, kendi aile ortamlarında temel ihtiyaçlarının karşılanması ve sağlıklı gelişimlerini sürdürebilmeleri amacıyla sağlanan önemli bir sosyal hizmet modelidir.
 
 Çocuklarımızın geleceği, ailelerimizin refahı, ülkemizin en değerli yatırım alanlarından biridir. Bu bilinçle, SED yardımı programı, özellikle ekonomik zorluklar yaşayan ailelerimize adeta bir nefes borusu olmakta, çocuklarımızın eğitimden sağlığa, giyimden barınmaya kadar pek çok temel ihtiyacının karşılanmasına destek olmaktadır.
 
@@ -53,7 +53,7 @@ Her yıl olduğu gibi, SED yardımı tutarları da güncel ekonomik koşullar ve
 
 Yapılan resmi açıklamalara göre, **2026 yılı için çocuk başına ortalama Sosyal ve Ekonomik Destek (SED) yardımı tutarı 9.723 TL olarak belirlenmiştir.** Bu rakam, geçmiş yıllara göre önemli bir artışı temsil etmekte ve enflasyon karşısında ailelerimizin alım gücünü korumaya yönelik bir adım olarak öne çıkmaktadır.
 
-Bu tutar, çocuğunuzun beslenme, giyim, okul masrafları ve diğer kişisel ihtiyaçları için önemli bir katkı sağlayarak, onun daha iyi koşullarda büyümesine ve eğitimine devam etmesine olanak tanıyacaktır. Unutulmamalıdır ki, bu 'ortalama' bir tutardır ve her ailenin veya çocuğun özel durumu değerlendirilerek kesin destek miktarı belirlenir.
+Bu tutar, çocuğunuzun beslenme, giyim, okul masrafları ve diğer kişisel ihtiyaçları için önemli bir katkı sağlayarak, onun daha iyi koşullarda büyümesine ve eğitimine devam etmesine olanak tanıyacaktır. Unutulmamalıdır ki, bu &rsquo;ortalama&rsquo; bir tutardır ve her ailenin veya çocuğun özel durumu değerlendirilerek kesin destek miktarı belirlenir.
 
 ### Bu Artış Neyi İfade Ediyor?
 
@@ -82,9 +82,9 @@ SED yardımı başvurusu yapmak artık oldukça kolay ve erişilebilir yöntemle
 ### Başvuru Yöntemleri
 
 1.  **e-Devlet Üzerinden Online Başvuru:** 
-    *   e-Devlet Kapısı'na giriş yaparak Aile ve Sosyal Hizmetler Bakanlığı'nın 'Sosyal ve Ekonomik Destek Hizmeti Ön Başvurusu' bölümünden başvurunuzu online olarak yapabilirsiniz. Bu yöntem hızlı ve pratik bir çözüm sunar.
+    *   e-Devlet Kapısı&rsquo;na giriş yaparak Aile ve Sosyal Hizmetler Bakanlığı&rsquo;nın &rsquo;Sosyal ve Ekonomik Destek Hizmeti Ön Başvurusu&rsquo; bölümünden başvurunuzu online olarak yapabilirsiniz. Bu yöntem hızlı ve pratik bir çözüm sunar.
 2.  **İl/İlçe Sosyal Hizmetler Müdürlükleri:**
-    *   İkamet ettiğiniz yere en yakın Aile ve Sosyal Hizmetler İl veya İlçe Müdürlükleri'ne şahsen giderek başvuruda bulunabilirsiniz. Burada görevli sosyal hizmet uzmanları size yardımcı olacaktır.
+    *   İkamet ettiğiniz yere en yakın Aile ve Sosyal Hizmetler İl veya İlçe Müdürlükleri&rsquo;ne şahsen giderek başvuruda bulunabilirsiniz. Burada görevli sosyal hizmet uzmanları size yardımcı olacaktır.
 
 ### Gerekli Belgeler (Genel Hatlar)
 

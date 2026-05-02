@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Vatandaşlık Maaşı 2026 Rehberi: Yeni Sosyal Yardım Modeliyle Kimler Ne Kadar Alacak?",
-  description: "Cumhurbaşkanı Yardımcısı Cevdet Yılmaz'ın duyurduğu yeni Vatandaşlık Maaşı modeli detaylandı. Başvuru şartları, ödenecek tutarlar ve merak edilen tüm bilgiler bu rehberde!",
+  description: "Cumhurbaşkanı Yardımcısı Cevdet Yılmaz&rsquo;ın duyurduğu yeni Vatandaşlık Maaşı modeli detaylandı. Başvuru şartları, ödenecek tutarlar ve merak edilen tüm bilgiler bu rehberde!",
 };
 
 export default function Page() {
@@ -32,14 +32,14 @@ export default function Page() {
                 Vatandaşlık Maaşı 2026 Rehberi: Yeni Sosyal Yardım Modeliyle Kimler Ne Kadar Alacak?
               </h1>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Cumhurbaşkanı Yardımcısı Cevdet Yılmaz'ın duyurduğu yeni Vatandaşlık Maaşı modeli detaylandı. Başvuru şartları, ödenecek tutarlar ve merak edilen tüm bilgiler bu rehberde!
+                Cumhurbaşkanı Yardımcısı Cevdet Yılmaz&rsquo;ın duyurduğu yeni Vatandaşlık Maaşı modeli detaylandı. Başvuru şartları, ödenecek tutarlar ve merak edilen tüm bilgiler bu rehberde!
               </p>
             </header>
 
             <div className="space-y-8 text-slate-800 leading-loose blog-content">
               # Vatandaşlık Maaşı 2026 Rehberi: Yeni Sosyal Yardım Modeliyle Kimler Ne Kadar Alacak?
 
-Türkiye'de sosyal yardım politikalarında önemli bir dönüşümün habercisi olan **Vatandaşlık Maaşı**, Cumhurbaşkanı Yardımcısı Sayın Cevdet Yılmaz tarafından duyuruldu. Özellikle dar gelirli ve ihtiyaç sahibi vatandaşlarımızın yaşam kalitesini artırmayı hedefleyen bu yeni model, aile bazlı sosyal destek anlayışını merkeze alıyor. Peki, bu yeni dönemde kimler Vatandaşlık Maaşı'ndan faydalanabilecek, başvuru şartları neler olacak ve ne kadar ödeme yapılacak? İşte tüm bu soruların cevapları ve 2026'da yürürlüğe girmesi beklenen Vatandaşlık Maaşı'na dair merak edilenler...
+Türkiye&rsquo;de sosyal yardım politikalarında önemli bir dönüşümün habercisi olan **Vatandaşlık Maaşı**, Cumhurbaşkanı Yardımcısı Sayın Cevdet Yılmaz tarafından duyuruldu. Özellikle dar gelirli ve ihtiyaç sahibi vatandaşlarımızın yaşam kalitesini artırmayı hedefleyen bu yeni model, aile bazlı sosyal destek anlayışını merkeze alıyor. Peki, bu yeni dönemde kimler Vatandaşlık Maaşı&rsquo;ndan faydalanabilecek, başvuru şartları neler olacak ve ne kadar ödeme yapılacak? İşte tüm bu soruların cevapları ve 2026&rsquo;da yürürlüğe girmesi beklenen Vatandaşlık Maaşı&rsquo;na dair merak edilenler...
 
 ## Vatandaşlık Maaşı Nedir ve Temel Amacı Nedir?
 
@@ -51,11 +51,11 @@ Bu modelin en önemli özelliklerinden biri, yardımları **hane bazlı** yani a
 
 ## Kimler Vatandaşlık Maaşına Başvurabilir? Başvuru Şartları (Beklenenler)
 
-Cumhurbaşkanı Yardımcısı Sayın Yılmaz'ın açıklamaları doğrultusunda, Vatandaşlık Maaşı'nın temel başvuru şartları aşağıdaki ana prensipler etrafında şekillenmesi beklenmektedir. Tam ve kesin uygulama esasları yönetmelikle belirlenecek olmakla birlikte, genel çerçeve şu şekildedir:
+Cumhurbaşkanı Yardımcısı Sayın Yılmaz&rsquo;ın açıklamaları doğrultusunda, Vatandaşlık Maaşı&rsquo;nın temel başvuru şartları aşağıdaki ana prensipler etrafında şekillenmesi beklenmektedir. Tam ve kesin uygulama esasları yönetmelikle belirlenecek olmakla birlikte, genel çerçeve şu şekildedir:
 
 ### 1. Hane Halkı Gelir Kriteri
 
-Vatandaşlık Maaşı'ndan faydalanmak isteyen hanelerin, devlet tarafından belirlenecek **hane halkı asgari geçim standardının altında** bir gelire sahip olması beklenmektedir. Bu kriter, ailenin genel ekonomik durumunu göz önünde bulunduracaktır.
+Vatandaşlık Maaşı&rsquo;ndan faydalanmak isteyen hanelerin, devlet tarafından belirlenecek **hane halkı asgari geçim standardının altında** bir gelire sahip olması beklenmektedir. Bu kriter, ailenin genel ekonomik durumunu göz önünde bulunduracaktır.
 
 ### 2. İhtiyaç Sahibi Olma
 
@@ -63,7 +63,7 @@ Yardımdan faydalanacak hanelerin gerçek anlamda ihtiyaç sahibi olduğu, detay
 
 ### 3. Türk Vatandaşı Olma
 
-Yardımdan faydalanacak kişilerin T.C. vatandaşı olması temel bir şart olacaktır. Ayrıca, Türkiye'de ikamet etme zorunluluğu da aranacaktır.
+Yardımdan faydalanacak kişilerin T.C. vatandaşı olması temel bir şart olacaktır. Ayrıca, Türkiye&rsquo;de ikamet etme zorunluluğu da aranacaktır.
 
 ### 4. Öncelikli Gruplar
 
@@ -71,7 +71,7 @@ Yeni modelde, özellikle hassas gruplara öncelik verilmesi beklenmektedir. Bu g
 
 ## Vatandaşlık Maaşı Ne Kadar Olacak? Ödeme Tutarları ve Detayları
 
-Vatandaşlık Maaşı'nın ödenecek tutarları henüz netleşmemekle birlikte, yapılan açıklamalarda **hanenin ihtiyaç durumuna, büyüklüğüne ve gelir düzeyine göre farklılık göstereceği** belirtilmiştir. Bu da, herkese sabit bir miktar yerine, gerçek ihtiyaçlara yönelik esnek bir ödeme sistemi olacağına işaret etmektedir.
+Vatandaşlık Maaşı&rsquo;nın ödenecek tutarları henüz netleşmemekle birlikte, yapılan açıklamalarda **hanenin ihtiyaç durumuna, büyüklüğüne ve gelir düzeyine göre farklılık göstereceği** belirtilmiştir. Bu da, herkese sabit bir miktar yerine, gerçek ihtiyaçlara yönelik esnek bir ödeme sistemi olacağına işaret etmektedir.
 
 ### Ödeme Tutarlarını Etkileyecek Faktörler (Beklenenler)
 
@@ -81,7 +81,7 @@ Vatandaşlık Maaşı'nın ödenecek tutarları henüz netleşmemekle birlikte, 
 
 ## Vatandaşlık Maaşı Başvuruları Ne Zaman Başlayacak? (2026 Süreci)
 
-Vatandaşlık Maaşı'nın 2026 yılı itibarıyla uygulamaya konulması planlanmaktadır. Bu nedenle, başvuruların 2026 yılına doğru veya 2026 içinde başlaması beklenmektedir. Vatandaşlarımızın, resmi duyuruları ve takvimi yakından takip etmeleri büyük önem taşımaktadır.
+Vatandaşlık Maaşı&rsquo;nın 2026 yılı itibarıyla uygulamaya konulması planlanmaktadır. Bu nedenle, başvuruların 2026 yılına doğru veya 2026 içinde başlaması beklenmektedir. Vatandaşlarımızın, resmi duyuruları ve takvimi yakından takip etmeleri büyük önem taşımaktadır.
 
 ## Başvuru Nasıl Yapılacak? Adım Adım Rehber (Beklenen Süreç)
 
@@ -105,7 +105,7 @@ Yeni Vatandaşlık Maaşı modelinin mevcut sosyal yardım programlarını nası
 
 ## Sonuç ve Önemli Uyarı
 
-Vatandaşlık Maaşı, Türkiye'de sosyal adalet ve refahın artırılmasına yönelik atılmış önemli bir adımdır. Uygulamaya geçtiğinde milyonlarca haneye doğrudan destek sağlaması beklenmektedir. Vatandaşlarımızın, bu konudaki en güncel ve doğru bilgilere ulaşmak için **T.C. Aile ve Sosyal Hizmetler Bakanlığı**'nın resmi internet sitesi ve duyurularını takip etmeleri büyük önem taşımaktadır. Herhangi bir mağduriyet yaşamamak adına, doğruluğu teyit edilmemiş bilgilere itibar etmemenizi önemle rica ederiz.
+Vatandaşlık Maaşı, Türkiye&rsquo;de sosyal adalet ve refahın artırılmasına yönelik atılmış önemli bir adımdır. Uygulamaya geçtiğinde milyonlarca haneye doğrudan destek sağlaması beklenmektedir. Vatandaşlarımızın, bu konudaki en güncel ve doğru bilgilere ulaşmak için **T.C. Aile ve Sosyal Hizmetler Bakanlığı**&rsquo;nın resmi internet sitesi ve duyurularını takip etmeleri büyük önem taşımaktadır. Herhangi bir mağduriyet yaşamamak adına, doğruluğu teyit edilmemiş bilgilere itibar etmemenizi önemle rica ederiz.
             </div>
           </div>
           
