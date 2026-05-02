@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import Link from "next/link";
+import type { Metadata } from &rdquo;next&rdquo;;
+import Link from &rdquo;next/link&rdquo;;
 
 export const metadata: Metadata = {
   title: "2026 Sosyal Yardım Zamları Evde Bakım ve 65 Yaş Aylığı",
