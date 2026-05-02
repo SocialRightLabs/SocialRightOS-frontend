@@ -1,18 +1,20 @@
 import { NextResponse } from "next/server";
+import { buildLocalApiPayload } from "@/lib/local-api-fallback";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-const DEFAULT_BACKEND_BASE_URL = "https://api.sosyalhakrehberi.com";
+const PROXY_TIMEOUT_MS = 4000;
 
-function getConfiguredBackendBaseUrl(): string {
+function getConfiguredBackendBaseUrl(): string | null {
   const candidate =
     process.env.BACKEND_BASE_URL ??
     process.env.API_BASE_URL ??
     process.env.NEXT_PUBLIC_API_BASE_URL ??
-    DEFAULT_BACKEND_BASE_URL;
+    "";
 
-  return candidate.replace(/\/+$/, "");
+  const normalized = candidate.replace(/\/+$/, "");
+  return normalized ? normalized : null;
 }
 
 type RouteContext = {
@@ -45,61 +47,105 @@ const HOP_BY_HOP_RESPONSE_HEADERS = new Set([
   "upgrade",
 ]);
 
-function getTargetBaseUrl() {
-  return getConfiguredBackendBaseUrl();
+async function readRequestBody(request: Request): Promise<{ body?: ArrayBuffer; json: unknown }> {
+  if (request.method === "GET" || request.method === "HEAD") {
+    return { json: null };
+  }
+
+  const body = await request.arrayBuffer();
+  if (body.byteLength === 0) {
+    return { body, json: null };
+  }
+
+  try {
+    const text = new TextDecoder().decode(body);
+    return { body, json: text ? JSON.parse(text) : null };
+  } catch {
+    return { body, json: null };
+  }
+}
+
+function toPathSegments(context: RouteContext): Promise<{ path?: string[] }> | { path?: string[] } {
+  return context.params;
 }
 
 async function forward(request: Request, context: RouteContext): Promise<Response> {
-  const backendBaseUrl = getTargetBaseUrl();
-
-  if (!backendBaseUrl) {
-    return NextResponse.json(
-      {
-        message: "Backend proxy yapılandırılamadı. Lütfen backend adresini kontrol edin.",
-        error: "configuration_error",
-        status: 500,
-        correlation_id: "",
-      },
-      { status: 500 },
-    );
-  }
-
-  const { path = [] } = await context.params;
-  const targetPath = path.length > 0 ? `/api/${path.join("/")}` : "/api";
+  const { path = [] } = await toPathSegments(context);
+  const backendBaseUrl = getConfiguredBackendBaseUrl();
   const sourceUrl = new URL(request.url);
-  const targetUrl = new URL(targetPath, backendBaseUrl);
-  targetUrl.search = sourceUrl.search;
+  const bodyState = await readRequestBody(request);
 
-  const headers = new Headers(request.headers);
+  if (backendBaseUrl) {
+    const targetPath = path.length > 0 ? `/api/${path.join("/")}` : "/api";
+    const targetUrl = new URL(targetPath, backendBaseUrl);
+    targetUrl.search = sourceUrl.search;
 
-  for (const headerName of HOP_BY_HOP_REQUEST_HEADERS) {
-    headers.delete(headerName);
+    const headers = new Headers(request.headers);
+
+    for (const headerName of HOP_BY_HOP_REQUEST_HEADERS) {
+      headers.delete(headerName);
+    }
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), PROXY_TIMEOUT_MS);
+
+    try {
+      const backendResponse = await fetch(targetUrl, {
+        method: request.method,
+        headers,
+        body: bodyState.body,
+        cache: "no-store",
+        redirect: "manual",
+        signal: controller.signal,
+      });
+
+      if (backendResponse.ok) {
+        const responseHeaders = new Headers(backendResponse.headers);
+
+        for (const headerName of HOP_BY_HOP_RESPONSE_HEADERS) {
+          responseHeaders.delete(headerName);
+        }
+
+        return new Response(backendResponse.body, {
+          status: backendResponse.status,
+          statusText: backendResponse.statusText,
+          headers: responseHeaders,
+        });
+      }
+    } catch {
+      // Fall back to the local deterministic engine below.
+    } finally {
+      clearTimeout(timeout);
+    }
   }
 
-  const body =
-    request.method === "GET" || request.method === "HEAD"
-      ? undefined
-      : await request.arrayBuffer();
+  const fallbackPayload = buildLocalApiPayload(path, bodyState.json);
+  if (fallbackPayload) {
+    const fallbackStatus =
+      typeof fallbackPayload === "object" &&
+      fallbackPayload !== null &&
+      "status" in fallbackPayload &&
+      typeof fallbackPayload.status === "number"
+        ? fallbackPayload.status
+        : 200;
 
-  const backendResponse = await fetch(targetUrl, {
-    method: request.method,
-    headers,
-    body,
-    cache: "no-store",
-    redirect: "manual",
-  });
-
-  const responseHeaders = new Headers(backendResponse.headers);
-
-  for (const headerName of HOP_BY_HOP_RESPONSE_HEADERS) {
-    responseHeaders.delete(headerName);
+    return NextResponse.json(fallbackPayload, {
+      status: fallbackStatus,
+      headers: {
+        "X-Local-Fallback": "1",
+      },
+    });
   }
 
-  return new Response(backendResponse.body, {
-    status: backendResponse.status,
-    statusText: backendResponse.statusText,
-    headers: responseHeaders,
-  });
+  return NextResponse.json(
+    {
+      message: "Bu API yolu için yerel geri dönüş tanımlı değil.",
+      error: "unsupported_route",
+      status: 503,
+      correlation_id: "",
+    },
+    { status: 503 },
+  );
 }
 
 export async function GET(request: Request, context: RouteContext) {
