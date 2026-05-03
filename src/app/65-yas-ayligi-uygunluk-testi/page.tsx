@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
+import { getSiteUrl } from "@/lib/site";
 import { OldAgeToolPageClient } from "./OldAgeToolPageClient";
 
 export const metadata: Metadata = {
@@ -10,7 +13,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function OldAgeToolPage() {
-  return <OldAgeToolPageClient />;
-}
+const siteUrl = getSiteUrl();
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
+  {
+    name: "65 yaş aylığı uygunluk testi",
+    url: new URL("/65-yas-ayligi-uygunluk-testi", siteUrl).toString(),
+  },
+]);
 
+export default function OldAgeToolPage() {
+  return (
+    <>
+      <OldAgeToolPageClient />
+      <JsonLd data={breadcrumbJsonLd} id="old-age-breadcrumb-jsonld" />
+    </>
+  );
+}

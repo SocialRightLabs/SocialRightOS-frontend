@@ -52,6 +52,7 @@ const quickLinks = [
   { href: "/blog", label: "Rehber yazıları" },
   { href: "/hakkimizda", label: "Misyon ve vizyon" },
   { href: "/methodology", label: "Yöntem ve sınırlar" },
+  { href: "/iletisim", label: "İletişim" },
 ];
 
 export default function RootLayout({
@@ -130,6 +131,12 @@ export default function RootLayout({
                 </Link>
                 <Link href="/start" className="secondary-link compact-link">
                   Evde Bakım testini aç
+                </Link>
+                <Link href="/iletisim" className="secondary-link compact-link">
+                  İletişim
+                </Link>
+                <Link href="/yasal-uyari" className="secondary-link compact-link">
+                  Yasal uyarı
                 </Link>
               </div>
             </div>

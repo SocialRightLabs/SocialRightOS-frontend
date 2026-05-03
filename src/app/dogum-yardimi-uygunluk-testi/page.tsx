@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
+import { getSiteUrl } from "@/lib/site";
 import { BirthGrantToolPageClient } from "./BirthGrantToolPageClient";
 
 export const metadata: Metadata = {
@@ -17,7 +20,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BirthGrantToolPage() {
-  return <BirthGrantToolPageClient />;
-}
+const siteUrl = getSiteUrl();
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
+  {
+    name: "Doğum yardımı uygunluk testi",
+    url: new URL("/dogum-yardimi-uygunluk-testi", siteUrl).toString(),
+  },
+]);
 
+export default function BirthGrantToolPage() {
+  return (
+    <>
+      <BirthGrantToolPageClient />
+      <JsonLd data={breadcrumbJsonLd} id="birth-grant-breadcrumb-jsonld" />
+    </>
+  );
+}

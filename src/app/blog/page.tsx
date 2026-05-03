@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
 import { contentRegistry } from "@/lib/content-registry";
+import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
+import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Blog ve rehber yazıları",
@@ -32,6 +35,12 @@ const contentTopics = [
 const publishedEntries = [...contentRegistry]
   .filter((entry) => entry.status === "published")
   .sort((left, right) => right.updated_at.localeCompare(left.updated_at));
+
+const siteUrl = getSiteUrl();
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
+  { name: "Blog", url: new URL("/blog", siteUrl).toString() },
+]);
 
 export default function BlogPage() {
   return (
@@ -122,6 +131,8 @@ export default function BlogPage() {
             ))}
           </div>
         </section>
+
+        <JsonLd data={breadcrumbJsonLd} id="blog-breadcrumb-jsonld" />
       </div>
     </main>
   );

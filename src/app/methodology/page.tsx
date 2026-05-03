@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
 import { homeCareMethodologyContent } from "@/lib/methodology-content";
+import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
+import { getSiteUrl } from "@/lib/site";
 import { siteProfile } from "@/lib/site-profile";
 
 export const metadata: Metadata = {
@@ -11,6 +14,12 @@ export const metadata: Metadata = {
     canonical: "/methodology",
   },
 };
+
+const siteUrl = getSiteUrl();
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
+  { name: "Yöntem ve Sınırlar", url: new URL("/methodology", siteUrl).toString() },
+]);
 
 export default function MethodologyPage() {
   return (
@@ -58,6 +67,8 @@ export default function MethodologyPage() {
           <p className="font-semibold">Önemli not</p>
           <p className="mt-2">{homeCareMethodologyContent.disclaimer}</p>
         </section>
+
+        <JsonLd data={breadcrumbJsonLd} id="methodology-breadcrumb-jsonld" />
       </div>
     </main>
   );

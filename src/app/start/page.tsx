@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
 import { homeCareStartContent } from "@/lib/home-care-start-content";
+import { buildBreadcrumbJsonLd, buildHowToJsonLd } from "@/lib/seo-json";
+import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Başlangıç",
@@ -10,6 +13,34 @@ export const metadata: Metadata = {
     canonical: "/start",
   },
 };
+
+const siteUrl = getSiteUrl();
+
+const startBreadcrumbs = buildBreadcrumbJsonLd([
+  { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
+  { name: "Başlangıç", url: new URL("/start", siteUrl).toString() },
+]);
+
+const startHowToJsonLd = buildHowToJsonLd({
+  name: "Evde bakım maaşı ön değerlendirmesine başlama",
+  description: homeCareStartContent.subtitle,
+  url: new URL("/start", siteUrl).toString(),
+  steps: [
+    {
+      name: "Temel bilgileri kontrol et",
+      text: homeCareStartContent.checklist[0].body,
+    },
+    {
+      name: "Gelir ve bakım durumunu gözden geçir",
+      text: homeCareStartContent.checklist[1].body,
+    },
+    {
+      name: "Ön değerlendirmeyi aç",
+      text: "Hazır olduğunuzda hesaplama sayfasına geçerek kısa ön değerlendirmeyi başlatın.",
+      url: new URL(homeCareStartContent.primaryHref, siteUrl).toString(),
+    },
+  ],
+});
 
 export default function StartPage() {
   return (
@@ -70,8 +101,10 @@ export default function StartPage() {
             </div>
           </aside>
         </section>
+
+        <JsonLd data={startBreadcrumbs} id="start-breadcrumb-jsonld" />
+        <JsonLd data={startHowToJsonLd} id="start-howto-jsonld" />
       </div>
     </main>
   );
 }
-

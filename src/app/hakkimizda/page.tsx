@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildBreadcrumbJsonLd } from "@/lib/seo-json";
+import { getSiteUrl } from "@/lib/site";
 import { siteOperations } from "@/lib/site-operations";
 import { siteProfile } from "@/lib/site-profile";
 
@@ -11,6 +14,12 @@ export const metadata: Metadata = {
     canonical: "/hakkimizda",
   },
 };
+
+const siteUrl = getSiteUrl();
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
+  { name: "Hakkımızda", url: new URL("/hakkimizda", siteUrl).toString() },
+]);
 
 export default function AboutPage() {
   return (
@@ -187,6 +196,8 @@ export default function AboutPage() {
             </div>
           </aside>
         </section>
+
+        <JsonLd data={breadcrumbJsonLd} id="about-breadcrumb-jsonld" />
       </div>
     </main>
   );

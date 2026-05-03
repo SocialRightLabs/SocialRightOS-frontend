@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/dogum-yardimi-uygunluk-testi/rehber",
     "/dogum-yardimi-uygunluk-testi/sss",
     "/hakkimizda",
+    "/iletisim",
     "/65-yas-ayligi-uygunluk-testi",
     "/65-yas-ayligi-uygunluk-testi/rehber",
     "/gss-gelir-testi",
@@ -27,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/evde-bakim-maasi/sartlar",
     "/evde-bakim-maasi/gelir-ve-hane-bilgisi",
     "/methodology",
+    "/yasal-uyari",
   ];
 
   return routes.map((route) => ({

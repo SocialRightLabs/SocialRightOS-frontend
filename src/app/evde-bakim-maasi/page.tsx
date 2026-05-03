@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
+import { buildBreadcrumbJsonLd, buildFaqJsonLd } from "@/lib/seo-json";
+import { getSiteUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Evde Bakım Maaşı Rehberi",
@@ -75,6 +78,13 @@ const detailGuides = [
       "Gelir ve kişi sayısı alanlarının neden istendiğini ve sayfanın neden nihai gelir kararı vermediğini açıklar.",
   },
 ];
+
+const siteUrl = getSiteUrl();
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "Ana sayfa", url: new URL("/", siteUrl).toString() },
+  { name: "Evde bakım maaşı", url: new URL("/evde-bakim-maasi", siteUrl).toString() },
+]);
+const faqJsonLd = buildFaqJsonLd(faqItems);
 
 export default function HomeCareAllowancePage() {
   return (
@@ -194,8 +204,10 @@ export default function HomeCareAllowancePage() {
             ))}
           </div>
         </section>
+
+        <JsonLd data={breadcrumbJsonLd} id="home-care-breadcrumb-jsonld" />
+        <JsonLd data={faqJsonLd} id="home-care-faq-jsonld" />
       </div>
     </main>
   );
 }
-

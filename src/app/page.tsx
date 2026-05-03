@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { JsonLd } from "@/components/seo/json-ld";
 import {
   homepageChooseItems,
   homepageGuideLinks,
   homepageHero,
   homepageTrustNotes,
 } from "@/lib/homepage-entry-content";
+import { buildFaqJsonLd } from "@/lib/seo-json";
 import { siteProfile } from "@/lib/site-profile";
 
 export const metadata: Metadata = {
@@ -52,19 +54,19 @@ const trustCards = [
 
 const liveExperienceCards = [
   {
-    title: "Açık anlatım",
-    body:
-      "Kısa sorular ilerledikçe sonuç kısa ve anlaşılır bir özet halinde gösterilir.",
+    badge: "Kısa akış",
+    title: "Sorular ilerledikçe özet görünür",
+    body: "Kısa sorular ilerledikçe sonuç anlaşılır bir özet halinde gösterilir.",
   },
   {
-    title: "Kapsam",
-    body:
-      "Evde bakım, GSS, 65 yaş aylığı ve doğum yardımı için doğrudan girişler sunulur.",
+    badge: "Sade sonuç",
+    title: "İlgili testlere doğrudan geçiş",
+    body: "Evde bakım, GSS, 65 yaş aylığı ve doğum yardımı için doğrudan girişler sunulur.",
   },
   {
-    title: "Gizlilik ilkesi",
-    body:
-      "Kimlik numarası, açık adres ve belge yükleme istemeden yalnızca gerekli bilgiler alınır.",
+    badge: "Veri koruma",
+    title: "Yalnızca gerekli bilgi istenir",
+    body: "Kimlik numarası, açık adres ve belge yükleme istemeden yalnızca gerekli bilgiler alınır.",
   },
 ];
 
@@ -85,6 +87,31 @@ const servicePillars = [
       "Sonuçların sınırlarını, dayanaklarını ve rehber niteliğini açıkça anlatır.",
   },
 ];
+
+const faqItems = [
+  {
+    question: "Bu site resmî karar verir mi?",
+    answer:
+      "Hayır. Site ön değerlendirme ve rehberlik sunar; resmî karar ilgili kurumlar tarafından verilir.",
+  },
+  {
+    question: "Hangi testten başlamalıyım?",
+    answer:
+      "İhtiyacınıza en yakın başlıktan başlayabilirsiniz. Evde bakım, GSS, 65 yaş aylığı ve doğum yardımı için ayrı girişler vardır.",
+  },
+  {
+    question: "Neden bazı sayfalarda kısa rehberler var?",
+    answer:
+      "Amaç, kullanıcıyı teknik detayla yormadan sonraki adımı netleştirmek ve başvuruya hazırlamaktır.",
+  },
+  {
+    question: "Kişisel verilerim neden istenmiyor?",
+    answer:
+      "Ön değerlendirme aşamasında yalnızca gerekli alanlar kullanılır; gereksiz veri toplamamak temel ilkedir.",
+  },
+];
+
+const homeFaqJsonLd = buildFaqJsonLd(faqItems);
 
 const whatsappChannel = siteProfile.contactChannels.find((channel) => channel.kind === "whatsapp");
 
@@ -182,10 +209,10 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-6 grid gap-4 lg:grid-cols-3">
+            <div className="mt-6 grid gap-4 lg:grid-cols-3">
             {liveExperienceCards.map((card) => (
               <article key={card.title} className="tool-card">
-                <p className="status-pill">Açık anlatım</p>
+                <p className="status-pill">{card.badge}</p>
                 <h3 className="mt-4 text-lg font-semibold text-slate-950">{card.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-slate-700">{card.body}</p>
               </article>
@@ -306,6 +333,31 @@ export default function Home() {
           </aside>
         </div>
       </section>
+
+      <section id="sss" className="section-shell">
+        <div className="panel-strong">
+          <div className="section-header">
+            <div>
+              <p className="section-label">Sık sorulan sorular</p>
+              <h2 className="section-heading mt-3">Kısa yanıtlarla temel sorular</h2>
+            </div>
+            <p className="section-copy max-w-2xl">
+              Siteyi ilk kez kullanan ziyaretçiler için en sık gelen soruları tek yerde topladık.
+            </p>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {faqItems.map((item) => (
+              <article key={item.question} className="tool-card">
+                <h3 className="text-lg font-semibold text-slate-950">{item.question}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-700">{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <JsonLd data={homeFaqJsonLd} id="home-faq-jsonld" />
     </main>
   );
 }
